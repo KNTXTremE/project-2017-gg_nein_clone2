@@ -14,6 +14,10 @@ public class GameLogic {
 		score = 0;
 	}
 
+	public void comboUp() {
+		if(touchNote == true) combo++;
+	}
+	
 	public void resetCombo() {
 		combo = 0;
 	}
