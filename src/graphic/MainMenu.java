@@ -1,5 +1,7 @@
 package graphic;
 
-public class MainMenu {
+import javafx.scene.canvas.Canvas;
+
+public class MainMenu extends Canvas {
 
 }

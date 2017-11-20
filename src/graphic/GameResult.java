@@ -1,5 +1,7 @@
 package graphic;
 
-public class GameResult {
+import javafx.scene.canvas.Canvas;
+
+public class GameResult extends Canvas {
 
 }

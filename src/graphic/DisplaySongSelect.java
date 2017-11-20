@@ -1,5 +1,7 @@
 package graphic;
 
-public class DisplaySongSelect {
+import javafx.scene.canvas.Canvas;
+
+public class DisplaySongSelect extends Canvas {
 
 }

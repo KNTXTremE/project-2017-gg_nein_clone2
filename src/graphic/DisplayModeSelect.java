@@ -1,5 +1,7 @@
 package graphic;
 
-public class DisplayModeSelect {
+import javafx.scene.canvas.Canvas;
+
+public class DisplayModeSelect extends Canvas {
 
 }
