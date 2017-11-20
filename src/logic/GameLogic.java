@@ -7,6 +7,7 @@ public class GameLogic {
 	private int combo;
 	private int score;
 	public static final int SCORE_PER_NOTE = 100;
+	public static final int MULTIPILER = 15;
 	
 	public GameLogic() {
 		touch = false;
@@ -17,7 +18,7 @@ public class GameLogic {
 
 	public void scoreUp() {
 		if(touchNote == true) {
-			score += SCORE_PER_NOTE + combo*15;
+			score += SCORE_PER_NOTE + combo*MULTIPILER;
 			combo++;
 		}
 	}
