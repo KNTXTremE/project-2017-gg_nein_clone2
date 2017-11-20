@@ -15,8 +15,11 @@ public class GameLogic {
 		score = 0;
 	}
 
-	public void comboUp() {
-		if(touchNote == true) combo++;
+	public void scoreUp() {
+		if(touchNote == true) {
+			score += SCORE_PER_NOTE + combo*15;
+			combo++;
+		}
 	}
 	
 	public void resetCombo() {
