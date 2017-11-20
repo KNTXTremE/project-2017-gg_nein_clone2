@@ -6,6 +6,7 @@ public class GameLogic {
 	private boolean touchNote;
 	private int combo;
 	private int score;
+	public static final int SCORE_PER_NOTE = 100;
 	
 	public GameLogic() {
 		touch = false;
