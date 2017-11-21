@@ -34,12 +34,12 @@ public class MainMenu extends Canvas implements Renderable {
 	}
 
 	public void setText() {
-		String title = "Welcome to LapLap Game";
+		String title = "Welcome to LapLap!";
 		String desc = "Press Enter to Start";
 		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
 		double desc_width = fontLoader.computeStringWidth(desc, MAINMENU_FONT);
 		gc.setFont(MAINMENU_FONT);
-		gc.setFill(Color.AQUA);
+		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.fillText(desc, (SCENE_WIDTH - desc_width)/2, 2*SCENE_HEIGHT/3);
 		EventHandler();
