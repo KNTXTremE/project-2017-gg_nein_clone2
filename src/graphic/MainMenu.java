@@ -3,7 +3,7 @@ package graphic;
 import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
-import javafx.application.Application;
+import application.GameMain;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -53,7 +53,7 @@ public class MainMenu extends Canvas implements Renderable {
                 	Platform.exit();
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
-//		    	 SceneManager.gotoSceneOf(canvas);
+                	GameMain.gotoModeSelect();
                 }
 			}
 		}); 
