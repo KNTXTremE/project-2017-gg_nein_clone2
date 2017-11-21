@@ -2,8 +2,13 @@ package graphic;
 
 import java.awt.FontFormatException;
 
+import application.GameMain;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -15,18 +20,32 @@ public class DisplayModeSelect extends Canvas implements Renderable {
 	
 	public DisplayModeSelect() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
-		setBackGround(gc);
-		setText(gc);
-		//EventHandler();
+		setBackGround();
+		setText();
+		EventHandler();
 	}
 	
-	public void setBackGround(GraphicsContext gc){
-		gc.setFill(Color.DARKBLUE);
+	public void setBackGround(){
+		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 	}
-	public void setText(GraphicsContext gc){
-	gc.setFill(Color.YELLOWGREEN);
-	gc.setFont(TEXT_FONT);
-	gc.fillText("TEST", SCENE_WIDTH/2, SCENE_HEIGHT/2);
+	
+	public void setText(){
+		gc.setFill(Color.YELLOWGREEN);
+		gc.setFont(TEXT_FONT);
+		gc.fillText("TEST Mode Select", SCENE_WIDTH/2, SCENE_HEIGHT/2);
+	}
+	
+	private void EventHandler() {
+		setOnKeyPressed(new EventHandler<KeyEvent>() {
+			public void handle(KeyEvent event) {
+                if(event.getCode().equals(KeyCode.ESCAPE)){
+                	SceneManager.gotoMainMenu();
+                }
+                else if(event.getCode().equals(KeyCode.ENTER)){
+                	GameMain.gotoSongSelect();
+                }
+			}
+		}); 
 	}
 }
