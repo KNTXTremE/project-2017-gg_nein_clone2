@@ -4,18 +4,16 @@ import graphic.*;
 import window.SceneManager;
 
 public class GameMain {
-	private static DisplayModeSelect displayModeSelectCanvas = new DisplayModeSelect();
+	private static DisplayModeSelect displayModeSelectCanvas;
 	private static DisplaySongSelect displaySongSelectCanvas;
 	private static InGame inGameCanvas;
 	private static GameResult gameResultCanvas;
 	
-	public GameMain() {
-//		displayModeSelectCanvas = new DisplayModeSelect();
-//		displaySongSelectCanvas = new DisplaySongSelect();
-//		inGameCanvas = new InGame();
-//		gameResultCanvas = new GameResult();
-		
-	
+	public static void newGame() {
+		if(displayModeSelectCanvas == null) displayModeSelectCanvas = new DisplayModeSelect();
+		if(displaySongSelectCanvas == null) displaySongSelectCanvas = new DisplaySongSelect();
+		if(inGameCanvas == null) inGameCanvas = new InGame();
+		if(gameResultCanvas == null) gameResultCanvas = new GameResult();
 	}
 	
 	public static void gotoModeSelect() {
