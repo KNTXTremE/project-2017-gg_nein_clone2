@@ -1,5 +1,6 @@
 package application;
 
+import graphic.*;
 import window.SceneManager;
 
 public class GameMain {
