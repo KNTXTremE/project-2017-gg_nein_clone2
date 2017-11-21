@@ -10,14 +10,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class MainMenu extends Application implements EventHandlerable{
-	public static final int SCENE_WIDTH = 800;
-	public static final int SCENE_HEIGHT = 600;
-	public static final Font start_font = new Font("Times new Roman", 50);
 	
 	public void setBackGround(GraphicsContext gc) {
 		gc.setFill(Color.BLACK);
@@ -43,14 +39,18 @@ public class MainMenu extends Application implements EventHandlerable{
 		firstStage.setScene(sc);
 		firstStage.setTitle("LapLap");
 		firstStage.show();
-		EventHandler();
+		EventHandler(sc,cv);
 		}
-	private void EventHandler(){
-		StackPane root = new StackPane();
-		root.setOnKeyPressed(new EventHandler<KeyEvent>() {
+	private void EventHandler(Scene seen,Canvas kanwas) {
+		seen.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
                 if(event.getCode().equals(KeyCode.ESCAPE)){
 		    	Platform.exit(); }
+			} });
+		kanwas.setOnKeyPressed(new EventHandler<KeyEvent>() {
+			public void handle(KeyEvent event) {
+                if(event.getCode().equals(KeyCode.ENTER)){
+		    	 primarystage.setscene()}
 			} }); 
 		}
 	public static void main(String[] args) {
