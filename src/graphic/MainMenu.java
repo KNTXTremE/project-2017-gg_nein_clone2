@@ -22,18 +22,18 @@ public class MainMenu extends Canvas implements Renderable {
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
 	public MainMenu() {
-		super(SceneManager.SCENE_WIDTH, SceneManager.SCENE_HEIGHT);
-		setBackGround(gc);
-		setText(gc);
+		super(SCENE_WIDTH, SCENE_HEIGHT);
+		setBackGround();
+		setText();
 		EventHandler();
 	}
 	
-	public void setBackGround(GraphicsContext gc) {
+	public void setBackGround() {
 		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 	}
 
-	public void setText(GraphicsContext gc) {
+	public void setText() {
 		String title = "Welcome to LapLap Game";
 		String desc = "Press Enter to Start";
 		FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();

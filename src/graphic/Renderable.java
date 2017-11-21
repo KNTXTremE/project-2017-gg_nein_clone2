@@ -9,6 +9,6 @@ public interface Renderable {
 	public static final Font TEXT_FONT = new Font(50);
 	public static final Font MAINMENU_FONT = new Font("Times new Roman Bold", 50);
 	public static final Font DISPLAYMODE_FONT = new Font(50);
-	public void setBackGround(GraphicsContext gc);
-	public void setText(GraphicsContext gc);
+	public void setBackGround();
+	public void setText();
 }
