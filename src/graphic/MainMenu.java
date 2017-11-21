@@ -43,6 +43,7 @@ public class MainMenu extends Canvas implements Renderable {
                 	Platform.exit();
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
+                	GameMain.newGame();
                 	GameMain.gotoModeSelect();
                 }
 			}
