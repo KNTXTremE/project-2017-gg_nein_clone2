@@ -36,7 +36,6 @@ public class MainMenu extends Canvas implements Renderable {
 	public void setText() {
 		String title = "Welcome to LapLap Game";
 		String desc = "Press Enter to Start";
-		FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
 		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
 		double desc_width = fontLoader.computeStringWidth(desc, MAINMENU_FONT);
 		gc.setFont(MAINMENU_FONT);
