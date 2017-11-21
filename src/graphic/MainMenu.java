@@ -31,7 +31,7 @@ public class MainMenu extends Canvas implements Renderable {
 	}
 
 	public void setText(GraphicsContext gc) {
-		gc.setFont(start_font);
+		gc.setFont(MAINMENU_FONT);
 		gc.setFill(Color.AQUA);
 		gc.fillText("Welcome to LapLap Game", SCENE_WIDTH/5, SCENE_HEIGHT/2);
 		gc.setTextAlign(TextAlignment.CENTER);
