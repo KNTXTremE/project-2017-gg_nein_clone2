@@ -16,16 +16,12 @@ public class SceneManager {
 	public static void initialize(Stage stage) {
 		primaryStage = stage;
 		primaryStage.show();
-	}
-
+		}
 	public static void gotoMainMenu() {
-		//TODO Fill Code
 		primaryStage.setScene(mainMenuScene);
 		mainMenuCanvas.requestFocus();
 	}
-
 	public static void gotoSceneOf(Canvas canvas) {
-		//TODO Fill Code
 		Scene scene = new Scene(new Pane(canvas));
 		primaryStage.setScene(scene);
 		canvas.requestFocus();
