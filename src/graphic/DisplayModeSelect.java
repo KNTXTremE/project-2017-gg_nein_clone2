@@ -26,6 +26,6 @@ public class DisplayModeSelect extends Canvas implements Renderable {
 	}
 	public void setText(GraphicsContext gc){
 	gc.setFill(Color.YELLOWGREEN);
-	gc.setFont(DisplayMode_font);
+	gc.setFont(MAINMENU_FONT);
 	}
 }
