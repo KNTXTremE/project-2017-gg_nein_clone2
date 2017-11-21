@@ -14,7 +14,7 @@ public class DisplayModeSelect extends Canvas implements Renderable {
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
 	public DisplayModeSelect() {
-		super(SceneManager.SCENE_WIDTH, SceneManager.SCENE_HEIGHT);
+		super(SCENE_WIDTH, SCENE_HEIGHT);
 		setBackGround(gc);
 		setText(gc);
 		//EventHandler();
@@ -22,10 +22,11 @@ public class DisplayModeSelect extends Canvas implements Renderable {
 	
 	public void setBackGround(GraphicsContext gc){
 		gc.setFill(Color.DARKBLUE);
-		gc.fillRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 	}
 	public void setText(GraphicsContext gc){
 	gc.setFill(Color.YELLOWGREEN);
-	gc.setFont(MAINMENU_FONT);
+	gc.setFont(TEXT_FONT);
+	gc.fillText("TEST", SCENE_WIDTH/2, SCENE_HEIGHT/2);
 	}
 }
