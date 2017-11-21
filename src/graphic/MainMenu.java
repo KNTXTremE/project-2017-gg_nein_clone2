@@ -1,5 +1,8 @@
 package graphic;
 
+import com.sun.javafx.tk.FontLoader;
+import com.sun.javafx.tk.Toolkit;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -31,10 +34,15 @@ public class MainMenu extends Canvas implements Renderable {
 	}
 
 	public void setText(GraphicsContext gc) {
+		String title = "Welcome to LapLap Game";
+		String desc = "Press Enter to Start";
+		FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
+		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
+		double desc_width = fontLoader.computeStringWidth(desc, MAINMENU_FONT);
 		gc.setFont(MAINMENU_FONT);
 		gc.setFill(Color.AQUA);
-		gc.fillText("Welcome to LapLap Game", SCENE_WIDTH/5, SCENE_HEIGHT/2);
-		gc.setTextAlign(TextAlignment.CENTER);
+		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
+		gc.fillText(desc, (SCENE_WIDTH - desc_width)/2, 2*SCENE_HEIGHT/3);
 		EventHandler();
 	}
 	
@@ -45,7 +53,7 @@ public class MainMenu extends Canvas implements Renderable {
                 	Platform.exit();
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
-//		    	 primarystage.setscene();
+//		    	 SceneManager.gotoSceneOf(canvas);
                 }
 			}
 		}); 
