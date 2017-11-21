@@ -9,5 +9,4 @@ public interface Renderable {
 	public static final Font start_font = new Font("Times new Roman", 50);
 	public void setBackGround(GraphicsContext gc);
 	public void setText(GraphicsContext gc);
-	public void EventHandler();
 }
