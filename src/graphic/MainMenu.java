@@ -42,7 +42,6 @@ public class MainMenu extends Canvas implements Renderable {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.fillText(desc, (SCENE_WIDTH - desc_width)/2, 2*SCENE_HEIGHT/3);
-		EventHandler();
 	}
 	
 	private void EventHandler() {
