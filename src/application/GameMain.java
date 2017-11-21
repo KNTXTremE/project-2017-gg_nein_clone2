@@ -1,5 +1,6 @@
 package application;
 
+import graphic.*;
 import window.SceneManager;
 
 public class GameMain {
@@ -7,6 +8,11 @@ public class GameMain {
 	private static DisplaySongSelect displaySongSelectCanvas;
 	private static InGame inGameCanvas;
 	private static GameResult gameResultCanvas;
+	
+	public GameMain() {
+		displayModeSelectCanvas = new DisplayModeSelect();
+	
+	}
 	
 	public static void gotoModeSelect() {
 		SceneManager.gotoSceneOf(displayModeSelectCanvas);
