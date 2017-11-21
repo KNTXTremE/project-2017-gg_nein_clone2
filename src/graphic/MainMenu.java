@@ -13,7 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-public class MainMenu extends Application implements EventHandlerable{
+public class MainMenu extends Canvas implements Renderable {
 	
 	public void setBackGround(GraphicsContext gc) {
 		gc.setFill(Color.BLACK);
