@@ -1,5 +1,5 @@
 package graphic;
 
-public interface EventHanderable {
+public interface EventHandlerable {
 	public void EventHandler();
 }
