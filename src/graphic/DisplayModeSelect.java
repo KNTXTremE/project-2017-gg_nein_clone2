@@ -1,9 +1,6 @@
 package graphic;
 
-import java.awt.FontFormatException;
-
 import application.GameMain;
-import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
