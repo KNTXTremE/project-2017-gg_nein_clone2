@@ -1,4 +1,4 @@
-package graphic;
+package sharedObject;
 
 import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;

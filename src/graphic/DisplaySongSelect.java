@@ -7,6 +7,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import sharedObject.Renderable;
 import window.SceneManager;
 
 public class DisplaySongSelect extends Canvas implements Renderable {

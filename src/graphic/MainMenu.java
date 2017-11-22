@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import sharedObject.Renderable;
 
 public class MainMenu extends Canvas implements Renderable {
 	
@@ -34,6 +35,7 @@ public class MainMenu extends Canvas implements Renderable {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.fillText(desc, (SCENE_WIDTH - desc_width)/2, 2*SCENE_HEIGHT/3);
+		
 	}
 	
 	private void EventHandler() {
