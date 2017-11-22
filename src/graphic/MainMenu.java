@@ -8,9 +8,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import sharedObject.Renderable;
 
-public class MainMenu extends Canvas implements Renderable {
+public class MainMenu extends Canvas implements Drawable {
 	
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	

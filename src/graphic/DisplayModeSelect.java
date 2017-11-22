@@ -9,10 +9,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import sharedObject.Renderable;
 import window.SceneManager;
 
-public class DisplayModeSelect extends Canvas implements Renderable {
+public class DisplayModeSelect extends Canvas implements Drawable {
 	
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
