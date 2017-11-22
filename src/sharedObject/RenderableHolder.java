@@ -35,7 +35,7 @@ public class RenderableHolder {
 	}
 
 	public static void loadResource() {
-		menuBackground = new Image(ClassLoader.getSystemResource("menu.jpg").toString());
+		menuBackground = new Image(ClassLoader.getSystemResource("menu.jpg").toString()); //NOT WORKING, FIX!!!
 		inGameBackground = new Image(ClassLoader.getSystemResource("").toString());
 		music1 = new AudioClip(ClassLoader.getSystemResource("").toString());
 	}
