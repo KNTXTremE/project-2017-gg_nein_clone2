@@ -17,6 +17,7 @@ public class SceneManager {
 		}
 	public static void gotoMainMenu() {
 		primaryStage.setScene(mainMenuScene);
+		
 		mainMenuCanvas.requestFocus();
 	}
 	public static void gotoSceneOf(Canvas canvas) {
