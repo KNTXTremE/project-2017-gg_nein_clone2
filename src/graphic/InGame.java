@@ -35,6 +35,7 @@ public class InGame extends Canvas implements Drawable {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
                 if(event.getCode().equals(KeyCode.ESCAPE)){
+                	//TEST ONLY!!!, IF ALREADY CODED ANIMATION, PLS CHANGE TO PAUSE MODE
                 	GameMain.gotoSongSelect();
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
