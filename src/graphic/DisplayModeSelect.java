@@ -26,9 +26,14 @@ public class DisplayModeSelect extends Canvas implements Renderable {
 		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 	}
 	public void setText(){
-		gc.setFill(Color.YELLOWGREEN);
-		gc.setFont(TEXT_FONT);
-		gc.fillText("TEST Mode Select", SCENE_WIDTH/2, SCENE_HEIGHT/2);
+		String title = "Select Your Mode";
+		String diff = "Easy  Normal  Hard  Custom";
+		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
+		double diff_width = fontLoader.computeStringWidth(diff, MAINMENU_FONT);
+		gc.setFont(MAINMENU_FONT);
+		gc.setFill(Color.LIME);
+		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
+		gc.fillText(diff, (SCENE_WIDTH - diff_width)/2, 2*SCENE_HEIGHT/3);
 	}
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {

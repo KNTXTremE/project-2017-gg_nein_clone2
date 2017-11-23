@@ -26,9 +26,11 @@ public class DisplaySongSelect extends Canvas implements Renderable {
 	}
 	
 	public void setText(){
-		gc.setFill(Color.YELLOWGREEN);
-		gc.setFont(TEXT_FONT);
-		gc.fillText("TEST Song Select", SCENE_WIDTH/3, SCENE_HEIGHT/2);
+		String title = "Select Song";
+		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
+		gc.setFont(MAINMENU_FONT);
+		gc.setFill(Color.BLANCHEDALMOND);
+		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 	}
 	
 	private void EventHandler() {

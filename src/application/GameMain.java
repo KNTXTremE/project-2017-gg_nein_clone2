@@ -27,12 +27,8 @@ public class GameMain {
 	public static void gotoInGame() {
 		SceneManager.gotoSceneOf(inGameCanvas);
 	}
-	
+
 	public static void gotoGameResult() {
 		SceneManager.gotoSceneOf(gameResultCanvas);
-	}
-	
-	
-	
-	
+	}	
 }
