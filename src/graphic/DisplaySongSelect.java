@@ -9,7 +9,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import window.SceneManager;
 
-public class DisplaySongSelect extends Canvas implements Renderable {
+public class DisplaySongSelect extends Canvas implements Drawable {
 	
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	

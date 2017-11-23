@@ -8,8 +8,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import sharedObject.RenderableHolder;
 
-public class MainMenu extends Canvas implements Renderable {
+public class MainMenu extends Canvas implements Drawable {
 	
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
@@ -23,6 +24,7 @@ public class MainMenu extends Canvas implements Renderable {
 	public void setBackGround() {
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
+		gc.drawImage(RenderableHolder.menuBackground, 0, 0);
 	}
 
 	public void setText() {
@@ -34,6 +36,7 @@ public class MainMenu extends Canvas implements Renderable {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.fillText(desc, (SCENE_WIDTH - desc_width)/2, 2*SCENE_HEIGHT/3);
+		
 	}
 	
 	private void EventHandler() {

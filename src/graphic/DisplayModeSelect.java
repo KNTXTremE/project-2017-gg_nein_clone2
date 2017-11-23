@@ -11,7 +11,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import window.SceneManager;
 
-public class DisplayModeSelect extends Canvas implements Renderable {
+public class DisplayModeSelect extends Canvas implements Drawable {
 	
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
@@ -21,10 +21,12 @@ public class DisplayModeSelect extends Canvas implements Renderable {
 		setText();
 		EventHandler();
 	}
+	
 	public void setBackGround(){
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 	}
+	
 	public void setText(){
 		String title = "Select Your Mode";
 		String diff = "Easy  Normal  Hard  Custom";
@@ -35,6 +37,7 @@ public class DisplayModeSelect extends Canvas implements Renderable {
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.fillText(diff, (SCENE_WIDTH - diff_width)/2, 2*SCENE_HEIGHT/3);
 	}
+	
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
