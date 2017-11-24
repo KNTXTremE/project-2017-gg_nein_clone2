@@ -14,7 +14,7 @@ public class InGame extends Canvas implements Drawable {
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
 	public InGame() {
-		super(600, 1000);
+		super(INGAME_WIDTH, INGAME_HEIGHT);
 		setBackGround();
 		setText();
 		EventHandler();
