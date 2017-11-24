@@ -7,6 +7,7 @@ import java.util.List;
 
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
+import javafx.scene.text.Font;
 
 public class RenderableHolder {
 	private static final RenderableHolder holder = new RenderableHolder();
@@ -16,6 +17,7 @@ public class RenderableHolder {
 	public static Image menuBackground;
 	public static Image inGameBackground;
 	public static AudioClip  music1;
+	public static Font owFont;
 
 	static {
 		loadResource();
@@ -38,6 +40,7 @@ public class RenderableHolder {
 		menuBackground = new Image(ClassLoader.getSystemResource("backgrounds/menu.jpg").toString());
 //		inGameBackground = new Image(ClassLoader.getSystemResource("").toString());
 //		music1 = new AudioClip(ClassLoader.getSystemResource("").toString());
+		owFont = Font.loadFont(ClassLoader.getSystemResource("fonts/bignoodletoo.ttf").toString(), 50);
 	}
 
 	public void add(Renderable note) {
