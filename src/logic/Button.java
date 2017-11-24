@@ -1,5 +1,7 @@
 package logic;
 
-public class Button {
+import sharedObject.Renderable;
+
+public class Button implements Renderable {
 
 }

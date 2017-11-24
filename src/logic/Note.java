@@ -1,5 +1,7 @@
 package logic;
 
-public class Note {
+import sharedObject.Renderable;
+
+public class Note implements Renderable {
 
 }
