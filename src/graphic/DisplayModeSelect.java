@@ -47,6 +47,16 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 		gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
 	}
 
+	private void setHightLight(String selected_mode, double selected_width) {
+		gc.setFill(Color.LIME);
+		gc.fillText(selected_mode, (SCENE_WIDTH - selected_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
+	}
+
+	private void setUnHightLight(String unsel_mode, double unsel_width) {
+		gc.setFill(Color.WHITE);
+		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
+	}
+
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
@@ -57,36 +67,26 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 					System.out.println(model.getMode());
 					GameMain.gotoSongSelect();
 				} else if (event.getCode().equals(KeyCode.DOWN)) {
-						if (model.getMode() == 0) {
-							gc.setFill(Color.LIME);
-							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
-							gc.setFill(Color.WHITE);
-							gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
-							model.setMode(1);
-						} else if (model.getMode() == 1) {
-							gc.setFill(Color.LIME);
-							gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
-							gc.setFill(Color.WHITE);
-							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
-							model.setMode(2);
-						}
+					if (model.getMode() == 0) {
+						setUnHightLight(easy_mode, easy_width);
+						model.setMode(1);
+						setHightLight(normal_mode, normal_width);
+					} else if (model.getMode() == 1) {
+						setUnHightLight(normal_mode, normal_width);
+						model.setMode(2);
+						setHightLight(hard_mode, hard_width);
+					}
 
 				} else if (event.getCode().equals(KeyCode.UP)) {
-					
-						if (model.getMode() == 1) {
-							gc.setFill(Color.WHITE);
-							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
-							gc.setFill(Color.LIME);
-							gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
-							model.setMode(0);
-						} else if (model.getMode() == 2) {
-							gc.setFill(Color.WHITE);
-							gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
-							gc.setFill(Color.LIME);
-							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
-							model.setMode(1);
-						}
-
+					if (model.getMode() == 1) {
+						setUnHightLight(normal_mode, normal_width);
+						model.setMode(0);
+						setHightLight(easy_mode, easy_width);
+					} else if (model.getMode() == 2) {
+						setUnHightLight(hard_mode, hard_width);
+						model.setMode(1);
+						setHightLight(normal_mode, normal_width);
+					}
 				}
 			}
 		});
