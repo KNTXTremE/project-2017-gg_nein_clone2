@@ -18,9 +18,9 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 	private String easy_mode = "Easy";
 	private String normal_mode = "Normal";
 	private String hard_mode = "Hard";
-	double easy_width = fontLoader.computeStringWidth(easy_mode, MAINMENU_FONT);
-	double normal_width = fontLoader.computeStringWidth(normal_mode, MAINMENU_FONT);
-	double hard_width = fontLoader.computeStringWidth(hard_mode, MAINMENU_FONT);
+	double easy_width = fontLoader.computeStringWidth(easy_mode, MAIN_FONT);
+	double normal_width = fontLoader.computeStringWidth(normal_mode, MAIN_FONT);
+	double hard_width = fontLoader.computeStringWidth(hard_mode, MAIN_FONT);
 
 	public DisplayModeSelect() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
@@ -36,11 +36,16 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 
 	public void setText() {
 		String title = "Select the difficulity";
-		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
-		gc.setFont(MAINMENU_FONT);
+		String back = "ESC: Back";
+		double title_width = fontLoader.computeStringWidth(title, MAIN_FONT);
+		double back_width = fontLoader.computeStringWidth(back, SUBMAIN_FONT);
+		gc.setFont(SUBMAIN_FONT);
+		gc.setFill(Color.ANTIQUEWHITE);
+		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
+		gc.setFont(MAIN_FONT);
 		gc.setFill(Color.LIME);
 		gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
-		gc.setFill(Color.WHITE);
+		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(title, (SCENE_WIDTH - title_width) / 2, SCENE_HEIGHT / 5);
 		gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
 		gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
@@ -52,7 +57,7 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 	}
 
 	private void setUnHightLight(String unsel_mode, double unsel_width) {
-		gc.setFill(Color.WHITE);
+		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
 	}
 

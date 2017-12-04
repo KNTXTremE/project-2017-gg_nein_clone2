@@ -30,13 +30,16 @@ public class MainMenu extends Canvas implements Drawable {
 	public void setText() {
 		String title = "Welcome to LapLap!";
 		String desc = "Press any key to continue...";
-		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
-		double desc_width = fontLoader.computeStringWidth(desc, MAINMENU_FONT);
-		gc.setFont(RenderableHolder.owFont);
+		String back = "ESC: Exit";
+		double title_width = fontLoader.computeStringWidth(title, MAIN_FONT);
+		double desc_width = fontLoader.computeStringWidth(desc, MAIN_FONT);
+		double back_width = fontLoader.computeStringWidth(back, SUBMAIN_FONT);
+		gc.setFont(MAIN_FONT);
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.fillText(desc, (SCENE_WIDTH - desc_width)/2, 2*SCENE_HEIGHT/3);
-		
+		gc.setFont(SUBMAIN_FONT);
+		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 	}
 	
 	private void EventHandler() {

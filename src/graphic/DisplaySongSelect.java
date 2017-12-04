@@ -28,10 +28,14 @@ public class DisplaySongSelect extends Canvas implements Drawable {
 	
 	public void setText(){
 		String title = "Select Song";
-		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
-		gc.setFont(MAINMENU_FONT);
+		String back = "ESC: Back";
+		double title_width = fontLoader.computeStringWidth(title, MAIN_FONT);
+		double back_width = fontLoader.computeStringWidth(back, SUBMAIN_FONT);
+		gc.setFont(MAIN_FONT);
 		gc.setFill(Color.BLANCHEDALMOND);
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
+		gc.setFont(SUBMAIN_FONT);
+		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 	}
 	
 	private void EventHandler() {
