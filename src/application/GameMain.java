@@ -1,9 +1,11 @@
 package application;
 
 import graphic.*;
+import javafx.scene.canvas.Canvas;
+import logic.GameModel;
 import window.SceneManager;
 
-public class GameMain {
+public class GameMain extends Canvas {
 	private static DisplayModeSelect displayModeSelectCanvas;
 	private static DisplaySongSelect displaySongSelectCanvas;
 	private static InGame inGameCanvas;
