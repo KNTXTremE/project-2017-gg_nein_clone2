@@ -15,7 +15,7 @@ import logic.GameModel;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class InGame extends Canvas implements Drawable {
+public class InGame extends GameMain implements Drawable {
 
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	

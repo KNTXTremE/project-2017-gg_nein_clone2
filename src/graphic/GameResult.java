@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class GameResult extends Canvas implements Drawable {
+public class GameResult extends GameMain implements Drawable {
 	
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
