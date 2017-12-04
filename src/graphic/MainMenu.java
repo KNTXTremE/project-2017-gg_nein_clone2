@@ -10,7 +10,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
 
-public class MainMenu extends Canvas implements Drawable {
+public class MainMenu extends GameMain implements Drawable {
 	
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
