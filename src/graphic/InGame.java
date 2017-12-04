@@ -22,8 +22,6 @@ public class InGame extends Canvas implements Drawable {
 	private static final int FPS = 60;
 	private static final long LOOP_TIME = 1000000000 / FPS;
 
-	private static final Font SCORE_TIME_FONT = new Font("Monospace", 30);
-
 	private GameModel model;
 	private Thread gameAnimation;
 	private boolean isAnimationRunning;
@@ -62,23 +60,22 @@ public class InGame extends Canvas implements Drawable {
 	}
 
 	private void updateAnimation(double count) {
-		double wordY = count + 20;
-		
-		double wordX = 0.5 * (INGAME_HEIGHT + fontLoader.getFontMetrics(TEXT_FONT).getLineHeight());
+		String test = "TEST";
+		double test_height = count + 20;
+		double test_width = fontLoader.computeStringWidth(test, MAIN_FONT);
 		String time = "Time Left: ";
-		double score_height = fontLoader.getFontMetrics(TEXT_FONT).getLineHeight(); 
-		double time_height = fontLoader.getFontMetrics(TEXT_FONT).getLineHeight(); 
-		double time_width = fontLoader.computeStringWidth(time, TEXT_FONT);
+		double score_height = fontLoader.getFontMetrics(MAIN_FONT).getLineHeight(); 
+		double time_height = fontLoader.getFontMetrics(MAIN_FONT).getLineHeight(); 
+		double time_width = fontLoader.computeStringWidth(time, MAIN_FONT);
 
 		// TODO fill code
 		setBackGround();
 		gc.setFill(Color.WHITE);
-		gc.setFont(SCORE_TIME_FONT);
+		gc.setFont(SUBMAIN_FONT);
 		gc.fillText("Score: ", 10, 10 + score_height);
-		gc.setFont(SCORE_TIME_FONT);
 		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + time_height);
-		gc.setFont(TEXT_FONT);
-		gc.fillText("TEST" , wordX, wordY);
+		gc.setFont(MAIN_FONT);
+		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
 		gc.setFill(Color.GREEN);
 		//gc.fillText(currentWordString.substring(0, model.getCurrentWordTypedCount()), wordX, wordY);
 		
@@ -92,7 +89,7 @@ public class InGame extends Canvas implements Drawable {
 	
 	public void setText(){
 		gc.setFill(Color.YELLOWGREEN);
-		gc.setFont(TEXT_FONT);
+		gc.setFont(MAIN_FONT);
 		gc.fillText("TEST In Game", 600/2, 1000/2);
 	}
 	
