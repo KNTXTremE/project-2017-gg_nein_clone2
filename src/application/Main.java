@@ -1,6 +1,7 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 import window.SceneManager;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ public class Main extends Application {
 			SceneManager.gotoMainMenu();
 			primaryStage.setTitle("LapLap Game");
 			primaryStage.centerOnScreen();
+			primaryStage.setOnCloseRequest(e -> Platform.exit());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
