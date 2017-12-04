@@ -29,7 +29,7 @@ public class MainMenu extends Canvas implements Drawable {
 
 	public void setText() {
 		String title = "Welcome to LapLap!";
-		String desc = "Press Enter to Start";
+		String desc = "Press any key to continue...";
 		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
 		double desc_width = fontLoader.computeStringWidth(desc, MAINMENU_FONT);
 		gc.setFont(RenderableHolder.owFont);
@@ -45,7 +45,7 @@ public class MainMenu extends Canvas implements Drawable {
                 if(event.getCode().equals(KeyCode.ESCAPE)){
                 	Platform.exit();
                 }
-                else if(event.getCode().equals(KeyCode.ENTER)){
+                else {
                 	GameMain.newGame();
                 	GameMain.gotoModeSelect();
                 }
