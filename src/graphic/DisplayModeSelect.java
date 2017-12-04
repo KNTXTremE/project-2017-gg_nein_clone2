@@ -38,13 +38,12 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 		String title = "Select the difficulity";
 		double title_width = fontLoader.computeStringWidth(title, MAINMENU_FONT);
 		gc.setFont(MAINMENU_FONT);
-		gc.setFill(Color.WHITE);
-		gc.fillText(title, (SCENE_WIDTH - title_width) / 2, SCENE_HEIGHT / 5);
-		gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
-		gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
-		gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
 		gc.setFill(Color.LIME);
 		gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
+		gc.setFill(Color.WHITE);
+		gc.fillText(title, (SCENE_WIDTH - title_width) / 2, SCENE_HEIGHT / 5);
+		gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
+		gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
 	}
 
 	private void setHightLight(String selected_mode, double selected_width) {
