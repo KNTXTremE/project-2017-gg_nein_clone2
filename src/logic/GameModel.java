@@ -6,6 +6,8 @@ public class GameModel {
 	private boolean touchNote;
 	private int combo;
 	private int score;
+	private int mode;
+
 	public static final int SCORE_PER_NOTE = 100;
 	public static final int MULTIPILER = 15;
 	
@@ -14,6 +16,7 @@ public class GameModel {
 		touchNote = false;
 		combo = 0;
 		score = 0;
+		mode = 0;
 	}
 
 	public void scoreUp() {
@@ -57,6 +60,14 @@ public class GameModel {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+	
+	public int getMode() {
+		return mode;
+	}
+
+	public void setMode(int mode) {
+		this.mode = mode;
 	}
 	
 }
