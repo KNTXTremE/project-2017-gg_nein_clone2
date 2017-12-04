@@ -11,6 +11,11 @@ public class GameMain extends Canvas {
 	private static InGame inGameCanvas;
 	private static GameResult gameResultCanvas;
 	
+	public GameMain(int sceneWidth, int sceneHeight) {
+		// TODO Auto-generated constructor stub
+		super(sceneWidth, sceneHeight);
+	}
+
 	public static void newGame() {
 		if(displayModeSelectCanvas == null) displayModeSelectCanvas = new DisplayModeSelect();
 		if(displaySongSelectCanvas == null) displaySongSelectCanvas = new DisplaySongSelect();
