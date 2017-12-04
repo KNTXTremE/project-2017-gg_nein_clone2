@@ -12,8 +12,8 @@ import javafx.scene.text.FontWeight;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class DisplayModeSelect extends Canvas implements Drawable {
-	
+public class DisplayModeSelect extends GameMain implements Drawable {
+
 	private GraphicsContext gc = this.getGraphicsContext2D();
 	
 	public DisplayModeSelect() {
