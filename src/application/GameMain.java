@@ -10,10 +10,12 @@ public class GameMain extends Canvas {
 	private static DisplaySongSelect displaySongSelectCanvas;
 	private static InGame inGameCanvas;
 	private static GameResult gameResultCanvas;
+	protected GameModel model;
 	
 	public GameMain(int sceneWidth, int sceneHeight) {
 		// TODO Auto-generated constructor stub
 		super(sceneWidth, sceneHeight);
+		model = new GameModel();
 	}
 
 	public static void newGame() {
