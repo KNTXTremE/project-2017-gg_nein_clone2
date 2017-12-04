@@ -18,7 +18,6 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 	private String easy_mode = "Easy";
 	private String normal_mode = "Normal";
 	private String hard_mode = "Hard";
-	private int now_mode = 0;
 	double easy_width = fontLoader.computeStringWidth(easy_mode, MAINMENU_FONT);
 	double normal_width = fontLoader.computeStringWidth(normal_mode, MAINMENU_FONT);
 	double hard_width = fontLoader.computeStringWidth(hard_mode, MAINMENU_FONT);
@@ -54,38 +53,38 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 				if (event.getCode().equals(KeyCode.ESCAPE)) {
 					SceneManager.gotoMainMenu();
 				} else if (event.getCode().equals(KeyCode.ENTER)) {
-					//model.setMode(now_mode);
-					System.out.println(now_mode);
+					model.setMode(model.getMode());
+					System.out.println(model.getMode());
 					GameMain.gotoSongSelect();
 				} else if (event.getCode().equals(KeyCode.DOWN)) {
-						if (now_mode == 0) {
+						if (model.getMode() == 0) {
 							gc.setFill(Color.LIME);
 							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
 							gc.setFill(Color.WHITE);
 							gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
-							now_mode = 1;
-						} else if (now_mode == 1) {
+							model.setMode(1);
+						} else if (model.getMode() == 1) {
 							gc.setFill(Color.LIME);
 							gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
 							gc.setFill(Color.WHITE);
 							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
-							now_mode = 2;
+							model.setMode(2);
 						}
 
 				} else if (event.getCode().equals(KeyCode.UP)) {
 					
-						if (now_mode == 1) {
+						if (model.getMode() == 1) {
 							gc.setFill(Color.WHITE);
 							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
 							gc.setFill(Color.LIME);
 							gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
-							now_mode = 0;
-						} else if (now_mode == 2) {
+							model.setMode(0);
+						} else if (model.getMode() == 2) {
 							gc.setFill(Color.WHITE);
 							gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
 							gc.setFill(Color.LIME);
 							gc.fillText(normal_mode, (SCENE_WIDTH - normal_width) / 2, 3 * SCENE_HEIGHT / 5);
-							now_mode = 1;
+							model.setMode(1);
 						}
 
 				}
