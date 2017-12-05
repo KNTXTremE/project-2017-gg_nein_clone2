@@ -40,7 +40,7 @@ public class RenderableHolder {
 		menuBackground = new Image(ClassLoader.getSystemResource("backgrounds/menu.jpg").toString());
 		inGameBackground = new Image(ClassLoader.getSystemResource("backgrounds/ingame.gif").toString());
 //		inGameBackground = new Image(ClassLoader.getSystemResource("").toString());
-//		music1 = new AudioClip(ClassLoader.getSystemResource("").toString());
+		music1 = new AudioClip(ClassLoader.getSystemResource("musics/nyancat.mp3").toString());
 		owFont = Font.loadFont(ClassLoader.getSystemResource("fonts/bignoodletoo.ttf").toString(), 50);
 	}
 
