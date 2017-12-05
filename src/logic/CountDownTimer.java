@@ -28,7 +28,12 @@ public class CountDownTimer {
 		return (int)(getTime()/Math.pow(10, 9));
 	}
 
-	public void setTime(int time) {
+	public void setTime(long time) {
 		this.time = time;
+	}
+
+	public void setTimeSecond(int songDuration) {
+		// TODO Auto-generated method stub
+		setTime(songDuration*1000000000L);
 	}
 }
