@@ -8,7 +8,7 @@ public class GameModel {
 	private int score;
 	private CountDownTimer countDownTimer;
 	private int mode;
-	private int song;
+	private int selectedSong;
 
 	public static final int SCORE_PER_NOTE = 100;
 	public static final int MULTIPILER = 15;
@@ -21,7 +21,7 @@ public class GameModel {
 		countDownTimer = new CountDownTimer(60);
 		countDownTimer = new CountDownTimer();
 		mode = 0;
-		song = 0;
+		selectedSong = 0;
 	}
 
 	public void scoreUp() {
@@ -83,12 +83,14 @@ public class GameModel {
 		this.mode = mode;
 	}
 
-	public int getSong() {
-		return song;
+	public int getSelectedSong() {
+		return selectedSong;
 	}
 
-	public void setSong(int song) {
-		this.song = song;
+	public void setSelectedSong(int song) {
+		this.selectedSong = song;
+	}
+
 	}
 	
 }
