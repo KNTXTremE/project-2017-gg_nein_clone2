@@ -9,6 +9,7 @@ public class GameLogic {
 
 	private GameModel model;
 	private InGame ingame;
+	private Thread gameLogic;
 	private static boolean isGameRunning;
 
 	public GameLogic(GameModel model, InGame ingame) {
@@ -18,34 +19,39 @@ public class GameLogic {
 
 	public void startGame() {
 		isGameRunning = true;
-		new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				long lastLoopStartTime = System.nanoTime();
-				while (isGameRunning) {
-					long elapsedTime = System.nanoTime() - lastLoopStartTime;
-					if (elapsedTime >= LOOP_TIME) {
-						lastLoopStartTime += LOOP_TIME;
-						updateGame(elapsedTime);
-					}
-
-					try {
-						Thread.sleep(1);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-			
-		}).start();
+		gameLogic = new Thread(this::gameLoop);
+		gameLogic.start();
+	}
+	
+	public void pauseGame() {
+		isGameRunning = false;
+	}
+	
+	public void resumeGame() {
+		isGameRunning = true;
 	}
 
 	public void stopGame() {
 		isGameRunning = false;
 	}
 
+	private void gameLoop() {
+		long lastLoopStartTime = System.nanoTime();
+		while (isGameRunning) {
+			long elapsedTime = System.nanoTime() - lastLoopStartTime;
+			if (elapsedTime >= LOOP_TIME) {
+				lastLoopStartTime += LOOP_TIME;
+				updateGame(elapsedTime);
+			}
+
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	private void updateGame(long elapsedTime) {
 		model.getCountDownTimer().countDown(elapsedTime);
 		if(model.getCountDownTimer().getTimeSecond() == 0) {

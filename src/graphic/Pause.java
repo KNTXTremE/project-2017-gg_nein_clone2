@@ -1,5 +1,12 @@
 package graphic;
 
+import application.GameMain;
+import javafx.event.EventHandler;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
+import window.SceneManager;
+
 public class Pause extends CanvasManager implements Drawable {
 
 	public Pause() {
@@ -13,12 +20,22 @@ public class Pause extends CanvasManager implements Drawable {
 	@Override
 	public void setBackGround() {
 		// TODO Auto-generated method stub
-		
+		gc.setFill(Color.BLACK);
+		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 	}
 
 	@Override
 	public void setText() {
 		// TODO Auto-generated method stub
+		String title = "- Pause -";
+		String back = "ESC: Play";
+		double title_width = calculateTextWidth(title, MAIN_FONT);
+		double back_width = calculateTextWidth(back, SUBMAIN_FONT);
+		gc.setFont(MAIN_FONT);
+		gc.setFill(Color.ANTIQUEWHITE);
+		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
+		gc.setFont(SUBMAIN_FONT);
+		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 		
 	}
 
@@ -36,7 +53,13 @@ public class Pause extends CanvasManager implements Drawable {
 	
 	private void EventHandler() {
 		// TODO Auto-generated method stub
-		
+		setOnKeyPressed(new EventHandler<KeyEvent>() {
+			public void handle(KeyEvent event) {
+				if (event.getCode().equals(KeyCode.ESCAPE)) {
+					GameMain.resumeInGame();
+				}
+			}
+		}); 
 	}
 
 }

@@ -21,6 +21,17 @@ public abstract class GameMain {
 		ingame.startAnimation();
 	}
 	
+	public static void resumeInGame() {
+		SceneManager.gotoSceneOf(ingame);
+		logic.resumeGame();
+		ingame.resumeAnimation();
+	}
+	
+	public static void pauseInGame() {
+		logic.stopGame();
+		ingame.stopAnimation();
+	}
+	
 	public static void stopInGame() {
 		logic.stopGame();
 		ingame.stopAnimation();

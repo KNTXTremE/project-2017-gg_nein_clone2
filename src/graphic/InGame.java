@@ -1,5 +1,6 @@
 package graphic;
 
+import application.GameMain;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -28,6 +29,14 @@ public class InGame extends CanvasManager implements Drawable {
 		gameAnimation = new Thread(this::animationLoop);
 		isAnimationRunning = true;
 		gameAnimation.start();
+	}
+	
+	public void pauseAnimation() {
+		isAnimationRunning = false;
+	}
+	
+	public void resumeAnimation() {
+		isAnimationRunning = true;
 	}
 
 	public void stopAnimation() {
@@ -88,7 +97,10 @@ public class InGame extends CanvasManager implements Drawable {
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
-				
+				if (event.getCode().equals(KeyCode.ESCAPE)) {
+					GameMain.pauseInGame();
+					SceneManager.gotoPause();
+				}
 			}
 		}); 
 	}
