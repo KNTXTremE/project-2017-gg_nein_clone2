@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import logic.GameModel;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
@@ -15,8 +16,9 @@ public class InGame extends CanvasManager implements Drawable {
 	private Thread gameAnimation;
 	private boolean isAnimationRunning;
 	
-	public InGame() {
+	public InGame(GameModel model) {
 		super(INGAME_WIDTH, INGAME_HEIGHT);
+		super.model = model;
 		gc = this.getGraphicsContext2D();
 		isAnimationRunning = false;
 		startAnimation();
