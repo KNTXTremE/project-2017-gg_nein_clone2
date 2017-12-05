@@ -3,6 +3,7 @@ package graphic;
 import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.text.Font;
 
 public interface Drawable {
@@ -12,7 +13,6 @@ public interface Drawable {
 	public static final int INGAME_HEIGHT = 800;
 	public static final Font MAIN_FONT = new Font("Monospace", 50);
 	public static final Font SUBMAIN_FONT = new Font("Monospace", 25);
-	public static FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
 	public void setBackGround();
 	public void setText();
 	public void setHightLight(String selected_mode, double selected_width);
