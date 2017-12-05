@@ -8,8 +8,8 @@ public class CountDownTimer {
 		this.time = time;
 	}
 	
-	public void countDown() {
-		if(time > 0) time--;
+	public void countDown(long elapsedTime) {
+		if(time > 0) time -= elapsedTime;
 	}
 	
 	public String toMinute() {
