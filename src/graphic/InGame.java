@@ -38,9 +38,13 @@ public class InGame extends CanvasManager implements Drawable {
 		long last = System.nanoTime();
 		int count = 0;
 		while (isAnimationRunning) {
+			long now = System.nanoTime();
+			if (now - last >= LOOP_TIME) {
+				last += LOOP_TIME;
 				updateAnimation(count);
 				count++;
 			}
+
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
