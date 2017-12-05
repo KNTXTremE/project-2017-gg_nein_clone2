@@ -46,7 +46,7 @@ public class InGame extends CanvasManager implements Drawable {
 			}
 
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(1);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
