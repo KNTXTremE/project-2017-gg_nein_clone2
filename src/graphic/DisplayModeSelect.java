@@ -64,7 +64,7 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 				} else if (event.getCode().equals(KeyCode.ENTER)) {
 					model.setMode(model.getMode());
 					System.out.println(model.getMode());
-					GameMain.gotoSongSelect();
+					SceneManager.gotoSongSelect();
 				} else if (event.getCode().equals(KeyCode.DOWN)) {
 					if (model.getMode() == 0) {
 						setUnHightLight(easy_mode, easy_width);

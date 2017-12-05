@@ -38,10 +38,10 @@ public class DisplaySongSelect extends GameMain implements Drawable {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
                 if(event.getCode().equals(KeyCode.ESCAPE)){
-                	GameMain.gotoModeSelect();
+                	SceneManager.gotoModeSelect();
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
-                	GameMain.gotoInGame();
+                	SceneManager.gotoInGame();
                 }
 			}
 		}); 

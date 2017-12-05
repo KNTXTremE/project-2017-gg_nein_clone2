@@ -46,8 +46,8 @@ public class MainMenu extends GameMain implements Drawable {
                 	Platform.exit();
                 }
                 else {
-                	GameMain.newGame();
-                	GameMain.gotoModeSelect();
+                	SceneManager.newGame();
+                	SceneManager.gotoModeSelect();
                 }
 			}
 		}); 
