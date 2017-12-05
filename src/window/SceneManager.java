@@ -4,10 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import graphic.DisplayModeSelect;
-import graphic.DisplaySongSelect;
-import graphic.GameResult;
-import graphic.MainMenu;
+import graphic.*;
 
 public class SceneManager {
 	private static Stage primaryStage;
@@ -15,6 +12,7 @@ public class SceneManager {
 	private static Scene mainMenuScene = new Scene(new Pane(mainMenuCanvas));
 	private static DisplayModeSelect displayModeSelectCanvas;
 	private static DisplaySongSelect displaySongSelectCanvas;
+	private static Pause pauseCanvas;
 	private static GameResult gameResultCanvas;
 
 	public static void initialize(Stage stage) {
@@ -35,6 +33,7 @@ public class SceneManager {
 	public static void newGame() {
 		if(displayModeSelectCanvas == null) displayModeSelectCanvas = new DisplayModeSelect();
 		if(displaySongSelectCanvas == null) displaySongSelectCanvas = new DisplaySongSelect();
+		if(pauseCanvas == null) pauseCanvas = new Pause();
 		if(gameResultCanvas == null) gameResultCanvas = new GameResult();
 	}
 	
@@ -44,6 +43,10 @@ public class SceneManager {
 	
 	public static void gotoSongSelect() {
 		gotoSceneOf(displaySongSelectCanvas);
+	}
+	
+	public static void gotoPause() {
+		gotoSceneOf(pauseCanvas);
 	}
 
 	public static void gotoGameResult() {
