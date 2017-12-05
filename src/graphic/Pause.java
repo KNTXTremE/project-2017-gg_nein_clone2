@@ -2,6 +2,13 @@ package graphic;
 
 public class Pause extends CanvasManager implements Drawable {
 
+	public Pause() {
+		super(SCENE_WIDTH, SCENE_HEIGHT);
+		gc = this.getGraphicsContext2D();
+		setBackGround();
+		setText();
+		EventHandler();
+	}
 
 	@Override
 	public void setBackGround() {
