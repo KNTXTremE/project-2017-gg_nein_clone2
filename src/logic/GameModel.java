@@ -1,5 +1,10 @@
 package logic;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import sharedObject.RenderableHolder;
+
 public class GameModel {
 	
 	private boolean touch;
@@ -9,6 +14,7 @@ public class GameModel {
 	private CountDownTimer countDownTimer;
 	private int mode;
 	private int selectedSong;
+	private List<Song> allSongs;
 
 	public static final int SCORE_PER_NOTE = 100;
 	public static final int MULTIPILER = 15;
@@ -18,10 +24,11 @@ public class GameModel {
 		touchNote = false;
 		combo = 0;
 		score = 0;
-		countDownTimer = new CountDownTimer(60);
 		countDownTimer = new CountDownTimer();
 		mode = 0;
 		selectedSong = 0;
+		allSongs = new ArrayList<>();
+		allSongs.add(new Song("Nyan cat", RenderableHolder.music1, 0, 30));
 	}
 
 	public void scoreUp() {
@@ -91,6 +98,11 @@ public class GameModel {
 		this.selectedSong = song;
 	}
 
+	public List<Song> getAllSongs() {
+		return allSongs;
 	}
-	
+
+	public void setAllSongs(List<Song> allSongs) {
+		this.allSongs = allSongs;
+	}
 }
