@@ -1,6 +1,5 @@
 package graphic;
 
-import application.GameMain;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;

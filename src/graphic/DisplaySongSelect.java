@@ -1,6 +1,5 @@
 package graphic;
 
-import application.GameMain;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -27,7 +26,7 @@ public class DisplaySongSelect extends GameMain implements Drawable {
 	}
 	
 	public void setText(){
-		String title = "Select Song";
+		String title = "Select the Song";
 		String back = "ESC: Back";
 		double title_width = fontLoader.computeStringWidth(title, MAIN_FONT);
 		double back_width = fontLoader.computeStringWidth(back, SUBMAIN_FONT);

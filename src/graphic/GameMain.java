@@ -1,6 +1,5 @@
-package application;
+package graphic;
 
-import graphic.*;
 import javafx.scene.canvas.Canvas;
 import logic.GameModel;
 import window.SceneManager;
