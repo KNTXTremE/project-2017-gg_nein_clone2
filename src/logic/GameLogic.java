@@ -15,7 +15,7 @@ public class GameLogic {
 		this.ingame = ingame;
 	}
 
-	public static void startGame() {
+	public void startGame() {
 		isGameRunning = true;
 		new Thread(new Runnable() {
 
@@ -42,11 +42,11 @@ public class GameLogic {
 		}).start();
 	}
 
-	public static void stopGame() {
+	public void stopGame() {
 		isGameRunning = false;
 	}
 
-	private static void updateGame(long elapsedTime) {
+	private void updateGame(long elapsedTime) {
 		model.getCountDownTimer().countDown(elapsedTime);
 		if(model.getCountDownTimer().getTime() == 0) {
 			stopGame();
