@@ -16,7 +16,8 @@ public class CountDownTimer {
 	}
 	
 	public String toMinute() {
-		return "0" + Integer.toString(time/60) + ":" + Integer.toString(time%60);
+		if(getTimeSecond()%PER_MINUTE < 10) return "0" + String.valueOf(getTimeSecond()/PER_MINUTE) + ":0" + String.valueOf(getTimeSecond()%PER_MINUTE);
+		return "0" + String.valueOf(getTimeSecond()/PER_MINUTE) + ":" + String.valueOf(getTimeSecond()%PER_MINUTE);
 	}
 
 	public long getTime() {
