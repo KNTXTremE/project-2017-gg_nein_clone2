@@ -7,6 +7,7 @@ public class GameModel {
 	private int combo;
 	private int score;
 	private int mode;
+	private int song;
 
 	public static final int SCORE_PER_NOTE = 100;
 	public static final int MULTIPILER = 15;
@@ -17,6 +18,7 @@ public class GameModel {
 		combo = 0;
 		score = 0;
 		mode = 0;
+		song = 0;
 	}
 
 	public void scoreUp() {
@@ -68,6 +70,14 @@ public class GameModel {
 
 	public void setMode(int mode) {
 		this.mode = mode;
+	}
+
+	public int getSong() {
+		return song;
+	}
+
+	public void setSong(int song) {
+		this.song = song;
 	}
 	
 }
