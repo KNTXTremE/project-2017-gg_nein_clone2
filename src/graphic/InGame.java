@@ -1,23 +1,14 @@
 package graphic;
 
-import com.sun.javafx.tk.FontLoader;
-import com.sun.javafx.tk.Toolkit;
-
 import javafx.event.EventHandler;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import logic.GameModel;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
 public class InGame extends GameMain implements Drawable {
 
-	private GraphicsContext gc = this.getGraphicsContext2D();
-	
 	private static final int FPS = 60;
 	private static final long LOOP_TIME = 1000000000 / FPS;
 
@@ -27,9 +18,8 @@ public class InGame extends GameMain implements Drawable {
 	
 	public InGame() {
 		super(INGAME_WIDTH, INGAME_HEIGHT);
-		//setBackGround();
-		//setText();
 		this.model = model;
+		gc = this.getGraphicsContext2D();
 		isAnimationRunning = false;
 		startAnimation();
 		EventHandler();
@@ -61,11 +51,11 @@ public class InGame extends GameMain implements Drawable {
 	private void updateAnimation(double count) {
 		String test = "TEST";
 		double test_height = count + 20;
-		double test_width = fontLoader.computeStringWidth(test, MAIN_FONT);
-		String time = "Time Left: ";
-		double score_height = fontLoader.getFontMetrics(MAIN_FONT).getLineHeight(); 
-		double time_height = fontLoader.getFontMetrics(MAIN_FONT).getLineHeight(); 
-		double time_width = fontLoader.computeStringWidth(time, MAIN_FONT);
+		double test_width = calculateTextWidth(test, MAIN_FONT);
+		String time = "Time Left: " + model.getTime().toMinute();
+		double score_height = calculateTextHeight(MAIN_FONT); 
+		double time_height = calculateTextHeight(MAIN_FONT); 
+		double time_width = calculateTextWidth(time, MAIN_FONT);
 
 		// TODO fill code
 		setBackGround();

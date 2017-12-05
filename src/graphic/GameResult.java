@@ -1,8 +1,6 @@
 package graphic;
 
 import javafx.event.EventHandler;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -11,10 +9,9 @@ import window.SceneManager;
 
 public class GameResult extends GameMain implements Drawable {
 	
-	private GraphicsContext gc = this.getGraphicsContext2D();
-	
 	public GameResult() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
+		gc = this.getGraphicsContext2D();
 		setBackGround();
 		setText();
 		EventHandler();

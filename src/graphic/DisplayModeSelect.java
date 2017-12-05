@@ -1,28 +1,24 @@
 package graphic;
 
 import javafx.event.EventHandler;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
 public class DisplayModeSelect extends GameMain implements Drawable {
 
-	private GraphicsContext gc = this.getGraphicsContext2D();
 	private String easy_mode = "Easy";
 	private String normal_mode = "Normal";
 	private String hard_mode = "Hard";
-	double easy_width = fontLoader.computeStringWidth(easy_mode, MAIN_FONT);
-	double normal_width = fontLoader.computeStringWidth(normal_mode, MAIN_FONT);
-	double hard_width = fontLoader.computeStringWidth(hard_mode, MAIN_FONT);
+	double easy_width = calculateTextWidth(easy_mode, MAIN_FONT);
+	double normal_width = calculateTextWidth(normal_mode, MAIN_FONT);
+	double hard_width = calculateTextWidth(hard_mode, MAIN_FONT);
 
 	public DisplayModeSelect() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
+		gc = this.getGraphicsContext2D();
 		setBackGround();
 		setText();
 		EventHandler();
@@ -36,8 +32,8 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 	public void setText() {
 		String title = "Select the difficulity";
 		String back = "ESC: Back";
-		double title_width = fontLoader.computeStringWidth(title, MAIN_FONT);
-		double back_width = fontLoader.computeStringWidth(back, SUBMAIN_FONT);
+		double title_width = calculateTextWidth(title, MAIN_FONT);
+		double back_width = calculateTextWidth(back, SUBMAIN_FONT);
 		gc.setFont(SUBMAIN_FONT);
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);

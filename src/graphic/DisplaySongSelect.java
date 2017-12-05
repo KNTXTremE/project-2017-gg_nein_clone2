@@ -1,8 +1,6 @@
 package graphic;
 
 import javafx.event.EventHandler;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -11,10 +9,9 @@ import window.SceneManager;
 
 public class DisplaySongSelect extends GameMain implements Drawable {
 	
-	private GraphicsContext gc = this.getGraphicsContext2D();
-	
 	public DisplaySongSelect() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
+		gc = this.getGraphicsContext2D();
 		setBackGround();
 		setText();
 		EventHandler();
@@ -28,10 +25,10 @@ public class DisplaySongSelect extends GameMain implements Drawable {
 	public void setText(){
 		String title = "Select the Song";
 		String back = "ESC: Back";
-		double title_width = fontLoader.computeStringWidth(title, MAIN_FONT);
-		double back_width = fontLoader.computeStringWidth(back, SUBMAIN_FONT);
+		double title_width = calculateTextWidth(title, MAIN_FONT);
+		double back_width = calculateTextWidth(back, SUBMAIN_FONT);
 		gc.setFont(MAIN_FONT);
-		gc.setFill(Color.BLANCHEDALMOND);
+		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.setFont(SUBMAIN_FONT);
 		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
