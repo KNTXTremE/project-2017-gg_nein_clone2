@@ -39,7 +39,7 @@ public class InGame extends GameMain implements Drawable {
 			updateAnimation(count);
 			count+=0.5;
 			try {
-				Thread.sleep(1);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -63,7 +63,7 @@ public class InGame extends GameMain implements Drawable {
 		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + time_height);
 		gc.setFont(MAIN_FONT);
 		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
-		gc.setFill(Color.GREEN);
+		model.getTime().countDown();
 		//gc.fillText(currentWordString.substring(0, model.getCurrentWordTypedCount()), wordX, wordY);
 		
 	}
