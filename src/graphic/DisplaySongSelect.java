@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import logic.Song;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
@@ -28,11 +29,17 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
 		String back = "ESC: Back";
 		double title_width = calculateTextWidth(title, MAIN_FONT);
 		double back_width = calculateTextWidth(back, SUBMAIN_FONT);
-		gc.setFont(MAIN_FONT);
-		gc.setFill(Color.ANTIQUEWHITE);
-		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
 		gc.setFont(SUBMAIN_FONT);
+		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
+		gc.setFont(MAIN_FONT);
+		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/5);
+		for(Song x : model.getAllSongs()) {
+			if(x.getSongNo() == 0) gc.setFill(Color.LIME);
+			else gc.setFill(Color.ANTIQUEWHITE);
+			gc.fillText(x.getSongName(), (SCENE_WIDTH - calculateTextWidth(x.getSongName(), MAIN_FONT)) / 2, 2 * SCENE_HEIGHT / 5);
+		}
+		
 	}
 
 	@Override
