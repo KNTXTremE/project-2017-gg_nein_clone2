@@ -21,7 +21,6 @@ public class InGame extends CanvasManager implements Drawable {
 		super.model = model;
 		gc = this.getGraphicsContext2D();
 		isAnimationRunning = false;
-		startAnimation();
 		EventHandler();
 	}
 
