@@ -19,6 +19,7 @@ public class GameModel {
 		combo = 0;
 		score = 0;
 		countDownTimer = new CountDownTimer(60);
+		countDownTimer = new CountDownTimer();
 		mode = 0;
 		song = 0;
 	}
