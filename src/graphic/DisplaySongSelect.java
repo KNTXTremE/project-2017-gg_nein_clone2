@@ -1,5 +1,6 @@
 package graphic;
 
+import application.GameMain;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -53,8 +54,7 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
                 	SceneManager.gotoModeSelect();
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
-                	SceneManager.gotoInGame();
-                	GameLogic.startGame();
+                	GameMain.startInGame();
                 }
 			}
 		}); 
