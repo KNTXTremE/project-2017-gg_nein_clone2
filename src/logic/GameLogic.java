@@ -6,11 +6,13 @@ public class GameLogic {
 	private static final int FPS = 60;
 	private static final long LOOP_TIME = 1000000000 / FPS;
 
-	private static GameModel model;
+	private GameModel model;
+	private InGame ingame;
 	private static boolean isGameRunning;
 
-	public GameLogic(GameModel model) {
+	public GameLogic(GameModel model, InGame ingame) {
 		this.model = model;
+		this.ingame = ingame;
 	}
 
 	public static void startGame() {
