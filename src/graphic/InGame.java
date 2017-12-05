@@ -88,14 +88,7 @@ public class InGame extends CanvasManager implements Drawable {
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
-                if(event.getCode().equals(KeyCode.ESCAPE)){
-                	//TEST ONLY!!!, IF ALREADY CODED ANIMATION, PLS CHANGE TO PAUSE MODE
-                	SceneManager.gotoSongSelect();
-                }
-                else if(event.getCode().equals(KeyCode.ENTER)){
-                	//TEST ONLY!!!, IF ALREADY CODED COUNTDOWN TIMER, PLS REMOVE THIS LINE
-                	SceneManager.gotoGameResult();
-                }
+				
 			}
 		}); 
 	}
