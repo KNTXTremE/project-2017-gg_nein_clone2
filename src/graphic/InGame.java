@@ -64,8 +64,8 @@ public class InGame extends CanvasManager implements Drawable {
 		setBackGround();
 		gc.setFill(Color.WHITE);
 		gc.setFont(SUBMAIN_FONT);
-		gc.fillText("Score: ", 10, 10 + score_height);
-		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + time_height);
+		gc.fillText("Score: " + model.getScore(), 10, 10 + font_height);
+		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + font_height);
 		gc.setFont(MAIN_FONT);
 		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
 		//gc.fillText(currentWordString.substring(0, model.getCurrentWordTypedCount()), wordX, wordY);
