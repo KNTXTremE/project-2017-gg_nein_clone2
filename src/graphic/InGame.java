@@ -74,9 +74,9 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 	
 	public void setBackGround(){
-		//gc.setFill(Color.BLACK);
-		//gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
-		gc.drawImage(RenderableHolder.inGameBackground, 0, 0);
+		gc.setFill(Color.BLACK);
+		gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
+		//gc.drawImage(RenderableHolder.inGameBackground, 0, 0);
 	}
 	
 	public void setText(){
