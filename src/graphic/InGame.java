@@ -65,6 +65,7 @@ public class InGame extends CanvasManager implements Drawable {
 		gc.setFill(Color.WHITE);
 		gc.setFont(SUBMAIN_FONT);
 		gc.fillText("Score: " + model.getScore(), 10, 10 + font_height);
+		gc.fillText("Combo: " + model.getCombo(), 10, 10 + 2*font_height);
 		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + font_height);
 		gc.setFont(MAIN_FONT);
 		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
