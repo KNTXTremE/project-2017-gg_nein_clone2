@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class DisplayModeSelect extends GameMain implements Drawable {
+public class DisplayModeSelect extends CanvasManager implements Drawable {
 
 	private String easy_mode = "Easy";
 	private String normal_mode = "Normal";
