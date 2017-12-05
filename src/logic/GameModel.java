@@ -6,7 +6,7 @@ public class GameModel {
 	private boolean touchNote;
 	private int combo;
 	private int score;
-	private CountDownTimer time;
+	private CountDownTimer countDownTimer;
 	private int mode;
 	private int song;
 
@@ -18,7 +18,7 @@ public class GameModel {
 		touchNote = false;
 		combo = 0;
 		score = 0;
-		time = new CountDownTimer(60);
+		countDownTimer = new CountDownTimer(60);
 		mode = 0;
 		song = 0;
 	}
@@ -66,12 +66,12 @@ public class GameModel {
 		this.score = score;
 	}
 	
-	public CountDownTimer getTime() {
-		return time;
+	public CountDownTimer getCountDownTimer() {
+		return countDownTimer;
 	}
 
-	public void setTime(CountDownTimer time) {
-		this.time = time;
+	public void setCountDownTimer(CountDownTimer timer) {
+		this.countDownTimer = timer;
 	}
 
 	public int getMode() {
