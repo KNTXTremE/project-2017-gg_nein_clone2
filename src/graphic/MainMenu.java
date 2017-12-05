@@ -52,4 +52,16 @@ public class MainMenu extends GameMain implements Drawable {
 			}
 		}); 
 	}
+
+	@Override
+	public void setHightLight(String selected_mode, double selected_width) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setUnHightLight(String unsel_mode, double unsel_width) {
+		// TODO Auto-generated method stub
+		
+	}
 }

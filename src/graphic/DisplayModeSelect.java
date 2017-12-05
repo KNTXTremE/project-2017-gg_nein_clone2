@@ -46,12 +46,12 @@ public class DisplayModeSelect extends GameMain implements Drawable {
 		gc.fillText(hard_mode, (SCENE_WIDTH - hard_width) / 2, 4 * SCENE_HEIGHT / 5);
 	}
 
-	private void setHightLight(String selected_mode, double selected_width) {
+	public void setHightLight(String selected_mode, double selected_width) {
 		gc.setFill(Color.LIME);
 		gc.fillText(selected_mode, (SCENE_WIDTH - selected_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
 	}
 
-	private void setUnHightLight(String unsel_mode, double unsel_width) {
+	public void setUnHightLight(String unsel_mode, double unsel_width) {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
 	}

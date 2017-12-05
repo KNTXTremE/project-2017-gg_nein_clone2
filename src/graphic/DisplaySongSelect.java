@@ -33,6 +33,18 @@ public class DisplaySongSelect extends GameMain implements Drawable {
 		gc.setFont(SUBMAIN_FONT);
 		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 	}
+
+	@Override
+	public void setHightLight(String selected_mode, double selected_width) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setUnHightLight(String unsel_mode, double unsel_width) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
