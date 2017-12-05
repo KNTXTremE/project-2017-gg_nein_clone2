@@ -1,5 +1,6 @@
 package logic;
 
+import application.GameMain;
 import graphic.InGame;
 
 public class GameLogic {
@@ -27,7 +28,6 @@ public class GameLogic {
 					long elapsedTime = System.nanoTime() - lastLoopStartTime;
 					if (elapsedTime >= LOOP_TIME) {
 						lastLoopStartTime += LOOP_TIME;
-
 						updateGame(elapsedTime);
 					}
 
@@ -48,9 +48,8 @@ public class GameLogic {
 
 	private void updateGame(long elapsedTime) {
 		model.getCountDownTimer().countDown(elapsedTime);
-		if(model.getCountDownTimer().getTime() == 0) {
-			stopGame();
-			InGame.stopAnimation();
+		if(model.getCountDownTimer().getTimeSecond() == 0) {
+			GameMain.stopInGame();
 		}
 	}
 }
