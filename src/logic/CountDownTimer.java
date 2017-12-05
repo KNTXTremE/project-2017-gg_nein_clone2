@@ -6,7 +6,7 @@ public class CountDownTimer {
 	private static final long DEFAULT_TIME = 65000000000L;
 	private static final int PER_MINUTE = 60;
 	
-	public CountDownTimer(long time) {
+	public CountDownTimer() {
 		//IF ALREADY ADD SONG, PLS CHANGE THIS LINE TO READ SONG LENGTH INSTEAD
 		this.time = DEFAULT_TIME;
 	}
