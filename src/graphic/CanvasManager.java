@@ -10,7 +10,7 @@ import logic.GameModel;
 
 public class CanvasManager extends Canvas {
 
-	protected GameModel model;
+	protected static GameModel model;
 	protected GraphicsContext gc;
 	FontLoader fontLoader;
 	
@@ -18,7 +18,7 @@ public class CanvasManager extends Canvas {
 		// TODO Auto-generated constructor stub
 		super(sceneWidth, sceneHeight);
 		fontLoader = Toolkit.getToolkit().getFontLoader();
-		model = new GameModel();
+		if(model == null) model = new GameModel();
 	}
 	
 	public double calculateTextWidth(String text, Font font) {
@@ -27,5 +27,9 @@ public class CanvasManager extends Canvas {
 	
 	public double calculateTextHeight(Font font) {
 		return fontLoader.getFontMetrics(font).getLineHeight();
+	}
+
+	public static GameModel getModel() {
+		return model;
 	}
 }

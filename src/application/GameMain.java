@@ -10,12 +10,10 @@ public abstract class GameMain {
 	
 	private static InGame ingame;
 	private static GameLogic logic;
-	private static GameModel model;
 	
 	public static void startInGame() {
-		model = new GameModel();
-		ingame = new InGame(model);
-		logic = new GameLogic(model, ingame);
+		ingame = new InGame();
+		logic = new GameLogic(ingame);
 		SceneManager.gotoSceneOf(ingame);
 		logic.startGame();
 		ingame.startAnimation();

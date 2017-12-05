@@ -1,6 +1,7 @@
 package logic;
 
 import application.GameMain;
+import graphic.CanvasManager;
 import graphic.InGame;
 
 public class GameLogic {
@@ -12,8 +13,8 @@ public class GameLogic {
 	private Thread gameLogic;
 	private static boolean isGameRunning;
 
-	public GameLogic(GameModel model, InGame ingame) {
-		this.model = model;
+	public GameLogic(InGame ingame) {
+		model = CanvasManager.getModel();
 		this.ingame = ingame;
 	}
 
