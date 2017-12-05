@@ -1,9 +1,5 @@
 package graphic;
 
-import com.sun.javafx.tk.FontLoader;
-import com.sun.javafx.tk.Toolkit;
-
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.text.Font;
 
 public interface Drawable {
