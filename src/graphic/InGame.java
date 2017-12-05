@@ -12,13 +12,11 @@ public class InGame extends GameMain implements Drawable {
 	private static final int FPS = 60;
 	private static final long LOOP_TIME = 1000000000 / FPS;
 
-	private GameModel model;
 	private Thread gameAnimation;
 	private boolean isAnimationRunning;
 	
 	public InGame() {
 		super(INGAME_WIDTH, INGAME_HEIGHT);
-		this.model = model;
 		gc = this.getGraphicsContext2D();
 		isAnimationRunning = false;
 		startAnimation();
