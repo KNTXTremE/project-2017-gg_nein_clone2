@@ -23,14 +23,14 @@ public abstract class GameMain {
 	
 	public static void resumeInGame() {
 		SceneManager.gotoSceneOf(ingame);
-		logic.resumeGame();
-		ingame.resumeAnimation();
+//		logic.resumeGame();
+//		ingame.resumeAnimation();
 	}
 	
-	public static void pauseInGame() {
-		logic.stopGame();
-		ingame.stopAnimation();
-	}
+//	public static void pauseInGame() {
+//		logic.stopGame();
+//		ingame.stopAnimation();
+//	}
 	
 	public static void stopInGame() {
 		logic.stopGame();

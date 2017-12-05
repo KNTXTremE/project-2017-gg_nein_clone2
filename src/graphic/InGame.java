@@ -31,13 +31,27 @@ public class InGame extends CanvasManager implements Drawable {
 		gameAnimation.start();
 	}
 	
-	public void pauseAnimation() {
-		isAnimationRunning = false;
-	}
-	
-	public void resumeAnimation() {
-		isAnimationRunning = true;
-	}
+//	public void pauseAnimation() {
+//		try {
+//			gameAnimation.wait();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//	
+//	public void resumeAnimation() {
+//		Object lock = new Object();
+//		synchronized(lock) {
+//			lock.notifyAll();
+//			try {
+//				gameAnimation.join(1);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//	}
 
 	public void stopAnimation() {
 		isAnimationRunning = false;
@@ -98,7 +112,7 @@ public class InGame extends CanvasManager implements Drawable {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if (event.getCode().equals(KeyCode.ESCAPE)) {
-					GameMain.pauseInGame();
+//					GameMain.pauseInGame();
 					SceneManager.gotoPause();
 				}
 			}

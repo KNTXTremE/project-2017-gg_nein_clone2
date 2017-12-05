@@ -23,13 +23,18 @@ public class GameLogic {
 		gameLogic.start();
 	}
 	
-	public void pauseGame() {
-		isGameRunning = false;
-	}
-	
-	public void resumeGame() {
-		isGameRunning = true;
-	}
+//	public void pauseGame() {
+//		try {
+//			gameLogic.wait();
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//	
+//	public void resumeGame() {
+//		//gameLogic.notify();
+//	}
 
 	public void stopGame() {
 		isGameRunning = false;
