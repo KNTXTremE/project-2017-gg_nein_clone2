@@ -8,12 +8,13 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.text.Font;
 import logic.GameModel;
 
-public abstract class GameMain extends Canvas {
+public class CanvasManager extends Canvas {
+
 	protected GameModel model;
 	protected GraphicsContext gc;
 	FontLoader fontLoader;
 	
-	public GameMain(int sceneWidth, int sceneHeight) {
+	public CanvasManager(int sceneWidth, int sceneHeight) {
 		// TODO Auto-generated constructor stub
 		super(sceneWidth, sceneHeight);
 		fontLoader = Toolkit.getToolkit().getFontLoader();
@@ -27,5 +28,4 @@ public abstract class GameMain extends Canvas {
 	public double calculateTextHeight(Font font) {
 		return fontLoader.getFontMetrics(font).getLineHeight();
 	}
-	
 }
