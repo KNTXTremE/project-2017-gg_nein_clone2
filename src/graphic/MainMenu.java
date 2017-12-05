@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class MainMenu extends GameMain implements Drawable {
+public class MainMenu extends CanvasManager implements Drawable {
 	
 	public MainMenu() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);

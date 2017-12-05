@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class GameResult extends GameMain implements Drawable {
+public class GameResult extends CanvasManager implements Drawable {
 	
 	public GameResult() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);

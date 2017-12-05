@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class InGame extends GameMain implements Drawable {
+public class InGame extends CanvasManager implements Drawable {
 
 	private static final int FPS = 60;
 	private static final long LOOP_TIME = 1000000000 / FPS;

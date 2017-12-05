@@ -8,7 +8,7 @@ import logic.GameLogic;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
-public class DisplaySongSelect extends GameMain implements Drawable {
+public class DisplaySongSelect extends CanvasManager implements Drawable {
 	
 	public DisplaySongSelect() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
