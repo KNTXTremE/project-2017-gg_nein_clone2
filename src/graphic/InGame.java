@@ -35,10 +35,12 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 
 	private void animationLoop() {
-		double count = 0;
+		long last = System.nanoTime();
+		int count = 0;
 		while (isAnimationRunning) {
-			updateAnimation(count);
-			count+=0.5;
+				updateAnimation(count);
+				count++;
+			}
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -48,8 +50,8 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 
 	private void updateAnimation(double count) {
+	private void updateAnimation(int count) {
 		String test = "TEST";
-		double test_height = count + 20;
 		double test_width = calculateTextWidth(test, MAIN_FONT);
 		String time = "Time Left: " + model.getTime().toMinute();
 		double score_height = calculateTextHeight(MAIN_FONT); 
