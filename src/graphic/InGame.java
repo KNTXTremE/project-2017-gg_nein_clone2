@@ -53,14 +53,13 @@ public class InGame extends CanvasManager implements Drawable {
 		}
 	}
 
-	private void updateAnimation(double count) {
 	private void updateAnimation(int count) {
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
 		String time = "Time Left: " + model.getTime().toMinute();
-		double score_height = calculateTextHeight(MAIN_FONT); 
-		double time_height = calculateTextHeight(MAIN_FONT); 
-		double time_width = calculateTextWidth(time, MAIN_FONT);
+		double test_height = (count*3);
+		double font_height = calculateTextHeight(SUBMAIN_FONT); 
+		double time_width = calculateTextWidth(time, SUBMAIN_FONT);
 
 		// TODO fill code
 		setBackGround();
