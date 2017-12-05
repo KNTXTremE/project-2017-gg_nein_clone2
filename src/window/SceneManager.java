@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 import graphic.DisplayModeSelect;
 import graphic.DisplaySongSelect;
 import graphic.GameResult;
-import graphic.InGame;
 import graphic.MainMenu;
 
 public class SceneManager {
@@ -16,7 +15,6 @@ public class SceneManager {
 	private static Scene mainMenuScene = new Scene(new Pane(mainMenuCanvas));
 	private static DisplayModeSelect displayModeSelectCanvas;
 	private static DisplaySongSelect displaySongSelectCanvas;
-	private static InGame inGameCanvas;
 	private static GameResult gameResultCanvas;
 
 	public static void initialize(Stage stage) {
@@ -37,7 +35,6 @@ public class SceneManager {
 	public static void newGame() {
 		if(displayModeSelectCanvas == null) displayModeSelectCanvas = new DisplayModeSelect();
 		if(displaySongSelectCanvas == null) displaySongSelectCanvas = new DisplaySongSelect();
-		if(inGameCanvas == null) inGameCanvas = new InGame();
 		if(gameResultCanvas == null) gameResultCanvas = new GameResult();
 	}
 	
@@ -47,10 +44,6 @@ public class SceneManager {
 	
 	public static void gotoSongSelect() {
 		gotoSceneOf(displaySongSelectCanvas);
-	}
-	
-	public static void gotoInGame() {
-		gotoSceneOf(inGameCanvas);
 	}
 
 	public static void gotoGameResult() {
