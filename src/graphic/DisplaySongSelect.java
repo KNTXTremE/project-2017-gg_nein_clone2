@@ -10,7 +10,7 @@ import sharedObject.RenderableHolder;
 import window.SceneManager;
 
 public class DisplaySongSelect extends CanvasManager implements Drawable {
-	
+
 	public DisplaySongSelect() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
 		gc = this.getGraphicsContext2D();
@@ -18,13 +18,13 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
 		setText();
 		EventHandler();
 	}
-	
-	public void setBackGround(){
+
+	public void setBackGround() {
 		gc.setFill(Color.BLACK);
 		gc.drawImage(RenderableHolder.menuBackground, 0, 0);
 	}
-	
-	public void setText(){
+
+	public void setText() {
 		String title = "Select the Song";
 		String back = "ESC: Back";
 		double title_width = calculateTextWidth(title, MAIN_FONT);
@@ -33,27 +33,32 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 		gc.setFont(MAIN_FONT);
-		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/(5  + model.getAllSongs().size()));
-		for(Song x : model.getAllSongs()) {
-			if(x.getSongNo() == 0) gc.setFill(Color.LIME);
-			else gc.setFill(Color.ANTIQUEWHITE);
-			gc.fillText(x.getSongName(), (SCENE_WIDTH - calculateTextWidth(x.getSongName(), MAIN_FONT)) / 2, 2 + x.getSongNo() * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
+		gc.fillText(title, (SCENE_WIDTH - title_width) / 2, SCENE_HEIGHT / (5 + model.getAllSongs().size()));
+		for (Song x : model.getAllSongs()) {
+			if (x.getSongNo() == 0)
+				gc.setFill(Color.LIME);
+			else
+				gc.setFill(Color.ANTIQUEWHITE);
+			gc.fillText(x.getSongName(), (SCENE_WIDTH - calculateTextWidth(x.getSongName(), MAIN_FONT)) / 2,
+					(2 + x.getSongNo()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 		}
-		
+
 	}
 
 	@Override
 	public void setHightLight(String selected_mode, double selected_width) {
 		// TODO Auto-generated method stub
 		gc.setFill(Color.LIME);
-		gc.fillText(selected_mode, (SCENE_WIDTH - selected_width) / 2, (2 + model.getSelectedSong()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
+		gc.fillText(selected_mode, (SCENE_WIDTH - selected_width) / 2,
+				(2 + model.getSelectedSong()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 	}
 
 	@Override
 	public void setUnHightLight(String unsel_mode, double unsel_width) {
 		// TODO Auto-generated method stub
 		gc.setFill(Color.ANTIQUEWHITE);
-		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2, (2 + model.getSelectedSong()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
+		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2,
+				(2 + model.getSelectedSong()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 	}
 	
 	private void EventHandler() {
