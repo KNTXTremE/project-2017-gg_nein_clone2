@@ -97,15 +97,18 @@ public class InGame extends CanvasManager implements Drawable {
 		double test_width = calculateTextWidth(test, MAIN_FONT);
 		double test_height = (count*3);
 		String time = model.getCountDownTimer().toMinute();
-		double font_height = calculateTextHeight(SUBMAIN_FONT); 
 		double time_width = calculateTextWidth(time, SUBMAIN_FONT);
+		String song_name = model.getAllSongs().get(model.getSelectedSong()).getSongName();
+		double song_name_width = calculateTextWidth(song_name, SUBMAIN_FONT);
+		double font_height = calculateTextHeight(SUBMAIN_FONT); 
 
 		setBackGround();
 		gc.setFill(Color.WHITE);
 		gc.setFont(SUBMAIN_FONT);
 		gc.fillText("Score: " + model.getScore(), 10, 10 + font_height);
 		gc.fillText("Combo: " + model.getCombo(), 10, 10 + 2*font_height);
-		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + font_height);
+		gc.fillText(song_name, INGAME_WIDTH - song_name_width - 10, 10 + font_height);
+		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + 2*font_height);
 		gc.setFont(MAIN_FONT);
 		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
 		
