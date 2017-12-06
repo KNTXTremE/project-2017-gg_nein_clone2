@@ -60,19 +60,31 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
 		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2,
 				(2 + model.getSelectedSong()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 	}
-	
+
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
-                if(event.getCode().equals(KeyCode.ESCAPE)){
-                	SceneManager.gotoModeSelect();
-                }
-                else if(event.getCode().equals(KeyCode.ENTER)){
-                	model.getCountDownTimer().setTimeSecond(model.getAllSongs().get(0).getSongDuration());
-                	model.getAllSongs().get(0).getSongFile().play();
-                	GameMain.startInGame();
-                }
+				if (event.getCode().equals(KeyCode.ESCAPE)) {
+					SceneManager.gotoModeSelect();
+				} else if (event.getCode().equals(KeyCode.ENTER)) {
+					model.getCountDownTimer().setTimeSecond(model.getAllSongs().get(model.getSelectedSong()).getSongDuration());
+					model.getAllSongs().get(model.getSelectedSong()).getSongFile().play();
+					GameMain.startInGame();
+				} else if (event.getCode().equals(KeyCode.DOWN)) {
+					if (model.getSelectedSong() == 0) {
+						setUnHightLight(model.getAllSongs().get(0).getSongName(), calculateTextWidth(model.getAllSongs().get(0).getSongName(), MAIN_FONT));
+						model.setSelectedSong(1);
+						setHightLight(model.getAllSongs().get(1).getSongName(), calculateTextWidth(model.getAllSongs().get(1).getSongName(), MAIN_FONT));
+					}
+
+				} else if (event.getCode().equals(KeyCode.UP)) {
+					if (model.getSelectedSong() == 1) {
+						setUnHightLight(model.getAllSongs().get(1).getSongName(), calculateTextWidth(model.getAllSongs().get(1).getSongName(), MAIN_FONT));
+						model.setSelectedSong(0);
+						setHightLight(model.getAllSongs().get(0).getSongName(), calculateTextWidth(model.getAllSongs().get(0).getSongName(), MAIN_FONT));
+					}
+				}
 			}
-		}); 
+		});
 	}
 }
