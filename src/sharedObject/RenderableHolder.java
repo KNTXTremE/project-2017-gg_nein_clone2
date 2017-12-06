@@ -17,7 +17,7 @@ public class RenderableHolder {
 	public static Image menuBackground;
 	public static Image inGameBackground;
 	public static AudioClip  music1, music2;
-	public static Font owFont;
+	public static Font gameFont;
 
 	static {
 		loadResource();
@@ -39,10 +39,9 @@ public class RenderableHolder {
 	public static void loadResource() {
 		menuBackground = new Image(ClassLoader.getSystemResource("backgrounds/menu.jpg").toString());
 		inGameBackground = new Image(ClassLoader.getSystemResource("backgrounds/ingame.gif").toString());
-//		inGameBackground = new Image(ClassLoader.getSystemResource("").toString());
 		music1 = new AudioClip(ClassLoader.getSystemResource("musics/nyancat.mp3").toString());
 		music2 = new AudioClip(ClassLoader.getSystemResource("musics/wicked-games.mp3").toString());
-		owFont = Font.loadFont(ClassLoader.getSystemResource("fonts/bignoodletoo.ttf").toString(), 50);
+		gameFont = Font.loadFont(ClassLoader.getSystemResource("fonts/AGENCYB.TTF").toString(), 50);
 	}
 
 	public void add(Renderable note) {
