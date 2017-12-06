@@ -5,8 +5,6 @@ import graphic.CanvasManager;
 import graphic.InGame;
 
 public class GameLogic {
-	private static final int FPS = 60;
-	private static final long LOOP_TIME = 1000000000 / FPS;
 
 	private GameModel model;
 	private InGame ingame;
