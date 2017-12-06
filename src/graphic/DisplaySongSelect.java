@@ -33,11 +33,11 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 		gc.setFont(MAIN_FONT);
-		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/5);
+		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/(5  + model.getAllSongs().size()));
 		for(Song x : model.getAllSongs()) {
 			if(x.getSongNo() == 0) gc.setFill(Color.LIME);
 			else gc.setFill(Color.ANTIQUEWHITE);
-			gc.fillText(x.getSongName(), (SCENE_WIDTH - calculateTextWidth(x.getSongName(), MAIN_FONT)) / 2, 2 * SCENE_HEIGHT / 5);
+			gc.fillText(x.getSongName(), (SCENE_WIDTH - calculateTextWidth(x.getSongName(), MAIN_FONT)) / 2, 2 + x.getSongNo() * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 		}
 		
 	}
