@@ -16,7 +16,7 @@ public class RenderableHolder {
 	private Comparator<Renderable> comparator;
 	public static Image menuBackground;
 	public static Image inGameBackground;
-	public static AudioClip  music1;
+	public static AudioClip  music1, music2;
 	public static Font owFont;
 
 	static {
@@ -41,6 +41,7 @@ public class RenderableHolder {
 		inGameBackground = new Image(ClassLoader.getSystemResource("backgrounds/ingame.gif").toString());
 //		inGameBackground = new Image(ClassLoader.getSystemResource("").toString());
 		music1 = new AudioClip(ClassLoader.getSystemResource("musics/nyancat.mp3").toString());
+		music2 = new AudioClip(ClassLoader.getSystemResource("musics/paino.mp3").toString());
 		owFont = Font.loadFont(ClassLoader.getSystemResource("fonts/bignoodletoo.ttf").toString(), 50);
 	}
 
