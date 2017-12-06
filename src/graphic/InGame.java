@@ -22,6 +22,22 @@ public class InGame extends CanvasManager implements Drawable {
 		isAnimationRunning = false;
 		EventHandler();
 	}
+	
+	private void getReady() {
+		// TODO Auto-generated method stub
+		for(int i = 3; i > -1 ;i--) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			setBackGround();
+			setText();
+			gc.fillText("Game start in " + i, INGAME_WIDTH/4, INGAME_HEIGHT/2);
+			System.out.println(i);
+		}
+	}
 
 	public void startAnimation() {
 		gameAnimation = new Thread(this::animationLoop);
@@ -56,6 +72,7 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 
 	private void animationLoop() {
+		getReady();
 		model.getAllSongs().get(model.getSelectedSong()).getSongFile().play();
 		long last = System.nanoTime();
 		int count = 0;
@@ -103,7 +120,7 @@ public class InGame extends CanvasManager implements Drawable {
 	public void setText(){
 		gc.setFill(Color.YELLOWGREEN);
 		gc.setFont(MAIN_FONT);
-		gc.fillText("TEST In Game", 600/2, 1000/2);
+		//gc.fillText("Game start in ", INGAME_WIDTH/3, INGAME_HEIGHT/2);
 	}
 	
 	private void EventHandler() {
