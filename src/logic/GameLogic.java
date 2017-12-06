@@ -14,6 +14,7 @@ public class GameLogic {
 	public GameLogic(InGame ingame) {
 		model = CanvasManager.getModel();
 		this.ingame = ingame;
+		isGameRunning = false;
 	}
 
 	public void startGame() {
