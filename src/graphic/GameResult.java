@@ -25,7 +25,7 @@ public class GameResult extends CanvasManager implements Drawable {
 	public void setText(){
 		gc.setFill(Color.YELLOWGREEN);
 		gc.setFont(MAIN_FONT);
-		gc.fillText("TEST Game Result", SCENE_WIDTH/2, SCENE_HEIGHT/2);
+		gc.fillText("TEST Game Result", SCENE_WIDTH/3, SCENE_HEIGHT/2);
 	}
 	
 	private void EventHandler() {
