@@ -62,7 +62,7 @@ public class DisplayModeSelect extends CanvasManager implements Drawable {
 				if (event.getCode().equals(KeyCode.ESCAPE)) {
 					SceneManager.gotoMainMenu();
 				} else if (event.getCode().equals(KeyCode.ENTER)) {
-					System.out.println(model.getMode());
+					System.out.println("Mode NO: " + model.getMode());
 					SceneManager.gotoSongSelect();
 				} else if (event.getCode().equals(KeyCode.DOWN)) {
 					if (model.getMode() == 0) {
