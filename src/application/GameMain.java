@@ -3,10 +3,9 @@ package application;
 import graphic.InGame;
 import javafx.application.Platform;
 import logic.GameLogic;
-import logic.GameModel;
 import window.SceneManager;
 
-public abstract class GameMain {
+public class GameMain {
 	
 	private static InGame ingame;
 	private static GameLogic logic;
