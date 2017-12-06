@@ -28,7 +28,8 @@ public class GameModel {
 		mode = 0;
 		selectedSong = 0;
 		allSongs = new ArrayList<>();
-		allSongs.add(new Song("Nyan cat", RenderableHolder.music1, 0, 30));
+		allSongs.add(new Song("Nyan cat", RenderableHolder.music1, 0, 33));
+		allSongs.add(new Song("Piano", RenderableHolder.music2, 1, 30));
 	}
 
 	public void scoreUp() {
