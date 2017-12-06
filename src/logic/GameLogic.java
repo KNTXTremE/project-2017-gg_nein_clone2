@@ -70,6 +70,12 @@ public class GameLogic {
 	private void updateGame(long elapsedTime) {
 		model.getCountDownTimer().countDown();
 		if (model.getCountDownTimer().getTime() == 0) {
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			GameMain.stopInGame();
 		}
 	}
