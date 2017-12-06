@@ -45,13 +45,15 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
 	@Override
 	public void setHightLight(String selected_mode, double selected_width) {
 		// TODO Auto-generated method stub
-		
+		gc.setFill(Color.LIME);
+		gc.fillText(selected_mode, (SCENE_WIDTH - selected_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 	}
 
 	@Override
 	public void setUnHightLight(String unsel_mode, double unsel_width) {
 		// TODO Auto-generated method stub
-		
+		gc.setFill(Color.ANTIQUEWHITE);
+		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 	}
 	
 	private void EventHandler() {
