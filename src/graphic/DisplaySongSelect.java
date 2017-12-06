@@ -62,6 +62,7 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
                 	model.getCountDownTimer().setTimeSecond(model.getAllSongs().get(0).getSongDuration());
+                	model.getAllSongs().get(0).getSongFile().play();
                 	GameMain.startInGame();
                 }
 			}
