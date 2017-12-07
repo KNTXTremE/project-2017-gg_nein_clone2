@@ -1,5 +1,7 @@
 package logic;
 
+import java.util.List;
+
 import application.GameMain;
 import graphic.CanvasManager;
 import graphic.InGame;
@@ -9,6 +11,8 @@ public class GameLogic {
 	private GameModel model;
 	private InGame ingame;
 	private Thread gameLogic;
+	private List<Note> notes;
+	private List<Button> buttons;
 	private static boolean isGameRunning;
 
 	public GameLogic(InGame ingame) {
