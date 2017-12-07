@@ -17,8 +17,8 @@ public class Note extends Items {
 		// TODO Auto-generated method stub
 		gc.setFill(Color.YELLOW);
 		gc.setStroke(Color.YELLOWGREEN);
-		gc.fillOval(95 + (position - 1)*120, y*60, 50, 50);
-		gc.strokeOval(95 + (position - 1)*120, y*60, 50, 50);
+		gc.fillOval(90 + (position - 1)*120, y*60, 50, 50);
+		gc.strokeOval(90 + (position - 1)*120, y*60, 50, 50);
 	}
 
 }
