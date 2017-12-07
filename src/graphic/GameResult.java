@@ -1,5 +1,6 @@
 package graphic;
 
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -32,10 +33,10 @@ public class GameResult extends CanvasManager implements Drawable {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
                 if(event.getCode().equals(KeyCode.ESCAPE)){
-                	SceneManager.gotoMainMenu();
+                	Platform.exit();
                 }
                 else if(event.getCode().equals(KeyCode.ENTER)){
-                	SceneManager.gotoMainMenu();
+                	Platform.exit();
                 }
 			}
 		}); 
