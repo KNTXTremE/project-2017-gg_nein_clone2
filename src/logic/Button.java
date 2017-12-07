@@ -26,7 +26,7 @@ public class Button extends Items {
 			gc.fillRect(x, y, 100, 50);
 		}
 		else { //DRAW PRESSED
-			gc.setFill(Color.RED);
+			gc.setFill(Color.ORANGE);
 			gc.setLineWidth(10);
 			gc.setStroke(Color.WHITE);
 			gc.strokeRect(x, y, 110, 60);
