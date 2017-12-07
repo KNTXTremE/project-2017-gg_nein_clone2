@@ -33,7 +33,8 @@ public class InGame extends CanvasManager implements Drawable {
 				e.printStackTrace();
 			}
 			setBackGround();
-			setText();
+			gc.setFill(Color.YELLOWGREEN);
+			gc.setFont(MAIN_FONT);
 			String game_ready = "Game start in " + i;
 			double game_ready_width = calculateTextWidth(game_ready, MAIN_FONT);
 			double game_ready_height = calculateTextHeight(MAIN_FONT);
@@ -96,24 +97,14 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 
 	private void updateAnimation(int count) {
+		setBackGround();
+		setText();
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
 		double test_height = (count*3);
-		String time = model.getCountDownTimer().toMinute();
-		double time_width = calculateTextWidth(time, SUBMAIN_FONT);
-		String song_name = model.getAllSongs().get(model.getSelectedSong()).getSongName();
-		double song_name_width = calculateTextWidth(song_name, SUBMAIN_FONT);
-		double font_height = calculateTextHeight(SUBMAIN_FONT); 
-
-		setBackGround();
-		gc.setFill(Color.WHITE);
-		gc.setFont(SUBMAIN_FONT);
-		gc.fillText("Score: " + model.getScore(), 10, 10 + font_height);
-		gc.fillText("Combo: " + model.getCombo(), 10, 10 + 2*font_height);
-		gc.fillText(song_name, INGAME_WIDTH - song_name_width - 10, 10 + font_height);
-		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + 2*font_height);
 		gc.setFont(MAIN_FONT);
 		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
+		
 		
 	}
 	
@@ -124,9 +115,18 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 	
 	public void setText(){
-		gc.setFill(Color.YELLOWGREEN);
-		gc.setFont(MAIN_FONT);
-		//gc.fillText("Game start in ", INGAME_WIDTH/3, INGAME_HEIGHT/2);
+		String time = model.getCountDownTimer().toMinute();
+		double time_width = calculateTextWidth(time, SUBMAIN_FONT);
+		String song_name = model.getAllSongs().get(model.getSelectedSong()).getSongName();
+		double song_name_width = calculateTextWidth(song_name, SUBMAIN_FONT);
+		double font_height = calculateTextHeight(SUBMAIN_FONT); 
+
+		gc.setFill(Color.WHITE);
+		gc.setFont(SUBMAIN_FONT);
+		gc.fillText("Score: " + model.getScore(), 10, 10 + font_height);
+		gc.fillText("Combo: " + model.getCombo(), 10, 10 + 2*font_height);
+		gc.fillText(song_name, INGAME_WIDTH - song_name_width - 10, 10 + font_height);
+		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + 2*font_height);
 	}
 	
 	private void EventHandler() {
