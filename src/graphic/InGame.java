@@ -16,12 +16,10 @@ public class InGame extends CanvasManager implements Drawable {
 
 	private Thread gameAnimation;
 	private boolean isAnimationRunning;
-	private ButtonGrid buttongrid;
 	
 	public InGame() {
 		super(INGAME_WIDTH, INGAME_HEIGHT);
 		gc = this.getGraphicsContext2D();
-		buttongrid =new ButtonGrid();
 		isAnimationRunning = false;
 		EventHandler();
 	}
@@ -102,9 +100,6 @@ public class InGame extends CanvasManager implements Drawable {
 	private void updateAnimation(int count) {
 		setBackGround();
 		setText();
-		setButtonReleased(60);
-		setButtonReleased(180);
-		setButtonReleased(300);
 		gc.setFill(Color.WHITE);
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
