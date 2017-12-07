@@ -22,6 +22,7 @@ public class GameLogic {
 	private Button button1, button2, button3;
 	private Note note;
 	private List<Pair<Double, Integer>> songNotes;
+	private Song selectedSong;
 
 	private static boolean isGameRunning;
 
@@ -32,7 +33,8 @@ public class GameLogic {
 		button1 = new Button(60, 700, KeyCode.A);
 		button2 = new Button(180, 700, KeyCode.S);
 		button3 = new Button(300, 700, KeyCode.D);
-		songNotes = model.getAllSongs().get(model.getSelectedSong()).getSongNotes();
+		selectedSong = model.getAllSongs().get(model.getSelectedSong());
+		songNotes = selectedSong.getSongNotes();
 		for(int i = 0; i < songNotes.size(); i++) {
 			note = new Note(songNotes.get(i).getFirst(), songNotes.get(i).getSecond());
 			addObj(note);
