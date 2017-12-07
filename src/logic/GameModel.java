@@ -28,8 +28,7 @@ public class GameModel {
 		mode = 0;
 		selectedSong = 0;
 		allSongs = new ArrayList<>();
-		allSongs.add(new Song("Nyan Cat", RenderableHolder.music1, 0, 35));
-		allSongs.add(new Song("Wicked Games", RenderableHolder.music2, 1, (4*60) + 41));
+		SongResources.addSong(allSongs);
 	}
 
 	public void scoreUp() {
