@@ -91,7 +91,7 @@ public class GameModel {
 	}
 	
 	public int getSpeed() {
-		return 120 + 40*(mode);
+		return 2 + 1*(mode);
 	}
 
 	public int getSelectedSong() {
