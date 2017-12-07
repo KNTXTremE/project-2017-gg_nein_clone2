@@ -8,6 +8,9 @@ import graphic.InGame;
 
 public class GameLogic {
 
+	private static final int FPS = 60;
+	private static final long LOOP_TIME = 1000000000 / FPS;
+
 	private GameModel model;
 	private InGame ingame;
 	private Thread gameLogic;
@@ -45,34 +48,31 @@ public class GameLogic {
 	}
 
 	private void gameLoop() {
-		for (int i = model.getAllSongs().get(model.getSelectedSong()).getSongDuration(); i > -1; i--) {
-			if (i == model.getAllSongs().get(model.getSelectedSong()).getSongDuration()) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		long lastLoopStartTime = System.nanoTime();
+		while (isGameRunning) {
+			long elapsedTime = System.nanoTime() - lastLoopStartTime;
+			if (elapsedTime >= LOOP_TIME) {
+				lastLoopStartTime += LOOP_TIME;
+				updateGame(elapsedTime);
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(1);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
-			updateGame(i);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		try {
-			Thread.sleep(1);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 	}
 
 	private void updateGame(long elapsedTime) {
-		model.getCountDownTimer().countDown();
-		if (model.getCountDownTimer().getTime() == 0) {
+		model.getCountDownTimer().countDown(elapsedTime);
+		if (model.getCountDownTimer().getTimeSecond() == 0) {
 			try {
 				Thread.sleep(3000);
 			} catch (InterruptedException e) {
