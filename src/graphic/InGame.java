@@ -109,7 +109,7 @@ public class InGame extends CanvasManager implements Drawable {
 		gc.setFill(Color.WHITE);
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
-		double test_height = (count*model.getSpeed());
+		double test_height = (count*model.getSpeed() - 500);
 		gc.setFont(MAIN_FONT);
 		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
 		
