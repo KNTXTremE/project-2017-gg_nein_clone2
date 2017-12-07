@@ -29,9 +29,9 @@ public class GameLogic {
 		model = CanvasManager.getModel();
 		this.ingame = ingame;
 		gameObj = new ArrayList<Items>();
-		button1 = new Button(60, 670, KeyCode.A);
-		button2 = new Button(180, 670, KeyCode.S);
-		button3 = new Button(300, 670, KeyCode.D);
+		button1 = new Button(60, 700, KeyCode.A);
+		button2 = new Button(180, 700, KeyCode.S);
+		button3 = new Button(300, 700, KeyCode.D);
 		songNotes = model.getAllSongs().get(model.getSelectedSong()).getSongNotes();
 		for(int i = 0; i < songNotes.size(); i++) {
 			note = new Note(songNotes.get(i).getFirst(), songNotes.get(i).getSecond());
