@@ -6,7 +6,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import sharedObject.RenderableHolder;
-import window.SceneManager;
 
 public class GameResult extends CanvasManager implements Drawable {
 	
