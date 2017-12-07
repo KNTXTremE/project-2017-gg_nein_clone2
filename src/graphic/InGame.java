@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import sharedObject.Renderable;
 import sharedObject.RenderableHolder;
 import window.SceneManager;
 
@@ -100,6 +101,11 @@ public class InGame extends CanvasManager implements Drawable {
 	private void updateAnimation(int count) {
 		setBackGround();
 		setText();
+		for (Renderable item : RenderableHolder.getInstance().getItems()) {
+			if (item.isVisible()) {
+				item.draw(gc);
+			}
+		}
 		gc.setFill(Color.WHITE);
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
