@@ -6,4 +6,5 @@ public interface Renderable {
 	public int getZ();
 	public void draw(GraphicsContext gc);
 	public boolean isPressed();
+	public boolean isVisible();
 }

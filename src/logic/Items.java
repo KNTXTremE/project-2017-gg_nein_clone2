@@ -6,10 +6,11 @@ public abstract class Items implements Renderable {
 	
 	protected int x, y;
 	protected int z;
-	protected boolean isPressed;
+	protected boolean isPressed, visible;
 	
 	public Items() {
-		this.isPressed = false;
+		isPressed = false;
+		visible = true;
 	}
 
 	public int getZ() {
@@ -18,6 +19,10 @@ public abstract class Items implements Renderable {
 	
 	public boolean isPressed() {
 		return isPressed;
+	}
+	
+	public boolean isVisible() {
+		return visible;
 	}
 	
 }
