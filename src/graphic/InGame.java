@@ -100,12 +100,12 @@ public class InGame extends CanvasManager implements Drawable {
 
 	private void updateAnimation(int count) {
 		setBackGround();
-		setText();
 		for (Renderable item : RenderableHolder.getInstance().getItems()) {
 			if (item.isVisible()) {
 				item.draw(gc);
 			}
 		}
+		setText();
 		gc.setFill(Color.WHITE);
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
