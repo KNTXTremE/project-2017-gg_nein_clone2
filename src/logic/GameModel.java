@@ -89,6 +89,10 @@ public class GameModel {
 	public void setMode(int mode) {
 		this.mode = mode;
 	}
+	
+	public int getSpeed() {
+		return 10 + 5*(mode);
+	}
 
 	public int getSelectedSong() {
 		return selectedSong;
