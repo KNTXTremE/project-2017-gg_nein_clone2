@@ -2,6 +2,7 @@ package logic;
 
 import java.util.ArrayList;
 import java.util.List;
+import logic.Pair;
 
 import application.GameMain;
 import graphic.CanvasManager;
@@ -19,6 +20,8 @@ public class GameLogic {
 	private Thread gameLogic;
 	private List<Items> gameObj;
 	private Button button1, button2, button3;
+	private Note note;
+	private List<Pair<Double, Integer>> songNotes;
 
 	private static boolean isGameRunning;
 
@@ -29,6 +32,11 @@ public class GameLogic {
 		button1 = new Button(60, 670, KeyCode.A);
 		button2 = new Button(180, 670, KeyCode.S);
 		button3 = new Button(300, 670, KeyCode.D);
+		songNotes = model.getAllSongs().get(model.getSelectedSong()).getSongNotes();
+		for(int i = 0; i < songNotes.size(); i++) {
+			note = new Note(songNotes.get(i).getFirst(), songNotes.get(i).getSecond());
+			addObj(note);
+		}
 		addObj(button1);
 		addObj(button2);
 		addObj(button3);
