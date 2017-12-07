@@ -1,10 +1,13 @@
 package logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import application.GameMain;
 import graphic.CanvasManager;
 import graphic.InGame;
+import javafx.scene.input.KeyCode;
+import sharedObject.RenderableHolder;
 
 public class GameLogic {
 
@@ -14,14 +17,27 @@ public class GameLogic {
 	private GameModel model;
 	private InGame ingame;
 	private Thread gameLogic;
-	private List<Note> notes;
-	private List<Button> buttons;
+	private List<Items> gameObj;
+	private Button button1, button2, button3;
+
 	private static boolean isGameRunning;
 
 	public GameLogic(InGame ingame) {
 		model = CanvasManager.getModel();
 		this.ingame = ingame;
+		gameObj = new ArrayList<Items>();
+		button1 = new Button(60, 670, KeyCode.A);
+		button2 = new Button(180, 670, KeyCode.S);
+		button3 = new Button(300, 670, KeyCode.D);
+		addObj(button1);
+		addObj(button2);
+		addObj(button3);
 		isGameRunning = false;
+	}
+
+	private void addObj(Items item) {
+		gameObj.add(item);
+		RenderableHolder.getInstance().add(item);
 	}
 
 	public void startGame() {
@@ -59,6 +75,9 @@ public class GameLogic {
 			long elapsedTime = System.nanoTime() - lastLoopStartTime;
 			if (elapsedTime >= LOOP_TIME) {
 				lastLoopStartTime += LOOP_TIME;
+				button1.update();
+				button2.update();
+				button3.update();
 				updateGame(elapsedTime);
 				try {
 					Thread.sleep(1);
