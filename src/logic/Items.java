@@ -4,7 +4,8 @@ import sharedObject.Renderable;
 
 public abstract class Items implements Renderable {
 	
-	protected int x, y;
+	protected int x;
+	protected double y;
 	protected int z;
 	protected boolean isPressed, visible;
 	
