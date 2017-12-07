@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 
 public class Button extends Items {
 
-	KeyCode keycode;
+	private KeyCode keycode;
 	
 	public Button(int x, int y, KeyCode keycode) {
 		this.x = x;
@@ -38,6 +38,9 @@ public class Button extends Items {
 	public void update() {
 		if(InGameInput.getKeyPressed(keycode)) {
 			isPressed = true;
+		}
+		else {
+			isPressed = false;
 		}
 	}
 }
