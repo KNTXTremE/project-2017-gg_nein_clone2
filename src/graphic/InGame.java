@@ -1,6 +1,7 @@
 package graphic;
 
 import application.GameMain;
+import input.InGameInput;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -15,10 +16,12 @@ public class InGame extends CanvasManager implements Drawable {
 
 	private Thread gameAnimation;
 	private boolean isAnimationRunning;
+	private ButtonGrid buttongrid;
 	
 	public InGame() {
 		super(INGAME_WIDTH, INGAME_HEIGHT);
 		gc = this.getGraphicsContext2D();
+		buttongrid =new ButtonGrid();
 		isAnimationRunning = false;
 		EventHandler();
 	}
@@ -99,6 +102,10 @@ public class InGame extends CanvasManager implements Drawable {
 	private void updateAnimation(int count) {
 		setBackGround();
 		setText();
+		setButtonReleased(60);
+		setButtonReleased(180);
+		setButtonReleased(300);
+		gc.setFill(Color.WHITE);
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
 		double test_height = (count*model.getSpeed());
@@ -108,9 +115,28 @@ public class InGame extends CanvasManager implements Drawable {
 		
 	}
 	
+	private void setButtonReleased(int x) {
+		// TODO Auto-generated method stub
+		gc.setFill(Color.RED);
+		gc.setLineWidth(10);
+		gc.setStroke(Color.WHITE);
+		gc.strokeRect(x, 670, 110, 60);
+		gc.fillRect(x, 670, 100, 50);
+	}
+	
+	private void setButtonPressed(int x) {
+		// TODO Auto-generated method stub
+		gc.setFill(Color.RED);
+		gc.setLineWidth(10);
+		gc.setStroke(Color.WHITE);
+		gc.strokeRect(x, 670, 110, 60);
+		gc.fillRect(x + 10, 680, 100, 50);
+	}
+
 	public void setBackGround(){
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
+		
 		//gc.drawImage(RenderableHolder.inGameBackground, 0, 0);
 	}
 	
@@ -132,9 +158,34 @@ public class InGame extends CanvasManager implements Drawable {
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
+				InGameInput.setKeyPressed(event.getCode());
 				if (event.getCode().equals(KeyCode.ESCAPE)) {
 //					GameMain.pauseInGame();
 					SceneManager.gotoPause();
+				}
+				else if(InGameInput.getKeyPressed(KeyCode.A)) {
+					setButtonPressed(60);
+				}
+				else if(InGameInput.getKeyPressed(KeyCode.S)) {
+					setButtonPressed(180);
+				}
+				else if(InGameInput.getKeyPressed(KeyCode.D)) {
+					setButtonPressed(300);
+				}
+			}
+		}); 
+		
+		setOnKeyReleased(new EventHandler<KeyEvent>() {
+			public void handle(KeyEvent event) {
+				InGameInput.setKeyReleased(event.getCode());
+				if(event.getCode().equals(KeyCode.A)) {
+					setButtonReleased(60);
+				}
+				else if(event.getCode().equals(KeyCode.S)) {
+					setButtonReleased(180);
+				}
+				else if(event.getCode().equals(KeyCode.D)) {
+					setButtonReleased(300);
 				}
 			}
 		}); 
