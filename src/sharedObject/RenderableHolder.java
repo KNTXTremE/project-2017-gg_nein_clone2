@@ -27,7 +27,7 @@ public class RenderableHolder {
 	public RenderableHolder() {
 		items = new ArrayList<Renderable>();
 		comparator = (Renderable o1, Renderable o2) -> {
-			if (o1.getZ() > o2.getZ())
+			if (o1 != null && o2 != null && o1.getZ() > o2.getZ())
 				return 1;
 			return -1;
 		};
