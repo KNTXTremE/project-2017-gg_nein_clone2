@@ -109,24 +109,6 @@ public class InGame extends CanvasManager implements Drawable {
 		
 		
 	}
-	
-	private void setButtonReleased(int x) {
-		// TODO Auto-generated method stub
-		gc.setFill(Color.RED);
-		gc.setLineWidth(10);
-		gc.setStroke(Color.WHITE);
-		gc.strokeRect(x, 670, 110, 60);
-		gc.fillRect(x, 670, 100, 50);
-	}
-	
-	private void setButtonPressed(int x) {
-		// TODO Auto-generated method stub
-		gc.setFill(Color.RED);
-		gc.setLineWidth(10);
-		gc.setStroke(Color.WHITE);
-		gc.strokeRect(x, 670, 110, 60);
-		gc.fillRect(x + 10, 680, 100, 50);
-	}
 
 	public void setBackGround(){
 		gc.setFill(Color.BLACK);
@@ -158,30 +140,12 @@ public class InGame extends CanvasManager implements Drawable {
 //					GameMain.pauseInGame();
 					SceneManager.gotoPause();
 				}
-				else if(InGameInput.getKeyPressed(KeyCode.A)) {
-					setButtonPressed(60);
-				}
-				else if(InGameInput.getKeyPressed(KeyCode.S)) {
-					setButtonPressed(180);
-				}
-				else if(InGameInput.getKeyPressed(KeyCode.D)) {
-					setButtonPressed(300);
-				}
 			}
 		}); 
 		
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				InGameInput.setKeyReleased(event.getCode());
-				if(event.getCode().equals(KeyCode.A)) {
-					setButtonReleased(60);
-				}
-				else if(event.getCode().equals(KeyCode.S)) {
-					setButtonReleased(180);
-				}
-				else if(event.getCode().equals(KeyCode.D)) {
-					setButtonReleased(300);
-				}
 			}
 		}); 
 	}
