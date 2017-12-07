@@ -4,11 +4,11 @@ import sharedObject.Renderable;
 
 public abstract class Items implements Renderable {
 	
+	protected int x, y;
 	protected int z;
 	protected boolean isPressed;
 	
 	public Items() {
-		super();
 		this.isPressed = false;
 	}
 
