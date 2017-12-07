@@ -17,12 +17,14 @@ public class Note extends Items {
 	}
 	
 	@Override
-	public void draw(GraphicsContext gc) {
+	public void draw(GraphicsContext gc, int count) {
 		// TODO Auto-generated method stub
 		gc.setFill(Color.YELLOW);
 		gc.setStroke(Color.YELLOWGREEN);
-		gc.fillOval(90 + (position - 1)*120, (y*model.getSpeed() + model.getAllSongs().get(model.getSelectedSong()).getSongDuration() - model.getCountDownTimer().getTimeSecond()), 50, 50);
-		gc.strokeOval(90 + (position - 1)*120, (y*model.getSpeed() + model.getAllSongs().get(model.getSelectedSong()).getSongDuration() - model.getCountDownTimer().getTimeSecond()), 50, 50);
+		gc.fillOval(90 + (position - 1)*120, count*model.getSpeed() + 120*y - 3500 - 120*model.getSpeed(), 50, 50); //MINUS FOR GOING UP
+		gc.strokeOval(90 + (position - 1)*120, count*model.getSpeed() + 120*y - 3500 - 120*model.getSpeed(), 50, 50);
+//		gc.fillOval(90 + (position - 1)*120, (y*model.getSpeed() + model.getAllSongs().get(model.getSelectedSong()).getSongDuration() - model.getCountDownTimer().getTimeSecond()), 50, 50);
+//		gc.strokeOval(90 + (position - 1)*120, (y*model.getSpeed() + model.getAllSongs().get(model.getSelectedSong()).getSongDuration() - model.getCountDownTimer().getTimeSecond()), 50, 50);
 	}
 
 }

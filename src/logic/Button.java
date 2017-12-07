@@ -17,7 +17,7 @@ public class Button extends Items {
 	}
 	
 	@Override
-	public void draw(GraphicsContext gc) {
+	public void draw(GraphicsContext gc, int count) {
 		// TODO Auto-generated method stub
 		if(isPressed == false) { //DRAW UNPRESSED
 			gc.setFill(Color.RED);

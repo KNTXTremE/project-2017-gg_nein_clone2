@@ -1,6 +1,5 @@
 package graphic;
 
-import application.GameMain;
 import input.InGameInput;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
@@ -102,14 +101,14 @@ public class InGame extends CanvasManager implements Drawable {
 		setBackGround();
 		for (Renderable item : RenderableHolder.getInstance().getItems()) {
 			if (item.isVisible()) {
-				item.draw(gc);
+				item.draw(gc ,count);
 			}
 		}
 		setText();
 		gc.setFill(Color.WHITE);
 		String test = "TEST";
 		double test_width = calculateTextWidth(test, MAIN_FONT);
-		double test_height = (count*model.getSpeed() - 500);
+		double test_height = (count*model.getSpeed() + 50);
 		gc.setFont(MAIN_FONT);
 		gc.fillText(test , (INGAME_WIDTH - test_width)/2, test_height);
 		
