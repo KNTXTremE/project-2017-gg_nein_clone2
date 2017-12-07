@@ -12,6 +12,7 @@ public class Button extends Items {
 	public Button(int x, int y, KeyCode keycode) {
 		this.x = x;
 		this.y = y;
+		this.z = 50;
 		this.keycode = keycode;
 	}
 	

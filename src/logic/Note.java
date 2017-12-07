@@ -10,6 +10,7 @@ public class Note extends Items {
 	public Note(double y, int position) {
 		this.position = position;
 		this.y = y;
+		this.z = 100;
 	}
 	
 	@Override
