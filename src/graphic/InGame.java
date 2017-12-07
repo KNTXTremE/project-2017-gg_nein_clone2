@@ -78,7 +78,7 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 
 	private void animationLoop() {
-		getReady();
+//		getReady();
 		model.getAllSongs().get(model.getSelectedSong()).getSongFile().play();
 		long last = System.nanoTime();
 		int count = 0;

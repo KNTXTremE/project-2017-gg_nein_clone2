@@ -74,12 +74,12 @@ public class GameLogic {
 	}
 
 	private void gameLoop() {
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(5000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		long lastLoopStartTime = System.nanoTime();
 		while (isGameRunning) {
 			long elapsedTime = System.nanoTime() - lastLoopStartTime;
