@@ -7,8 +7,6 @@ public abstract class Items implements Renderable {
 	protected int z;
 	protected boolean isPressed;
 	
-	
-	
 	public Items() {
 		super();
 		this.isPressed = false;
