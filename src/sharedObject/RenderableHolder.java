@@ -8,6 +8,7 @@ import java.util.List;
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
+import logic.Note;
 
 public class RenderableHolder {
 	private static final RenderableHolder holder = new RenderableHolder();
@@ -51,7 +52,7 @@ public class RenderableHolder {
 
 	public void update() {
 		for (int i = items.size() - 1; i > -1; i--) {
-			if (items.get(i).isPressed())
+			if (items.get(i).isPressed() && items.get(i) instanceof Note)
 				items.remove(i);
 		}
 	}
