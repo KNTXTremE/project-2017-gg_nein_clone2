@@ -1,19 +1,17 @@
 package logic;
 
 import java.util.List;
-import java.util.SortedMap;
 
 import javafx.scene.media.AudioClip;
-import javafx.util.Pair;
 
 public class Song {
 	private String songName;
 	private AudioClip songFile;
 	private int songNo;
 	private int songDuration;
-	private SortedMap<Double, Integer> songNotes;
+	private List<Pair<Double, Integer>> songNotes;
 	
-	public Song(String songName, AudioClip songFile, int songNo, int songDuration, SortedMap<Double, Integer> songNotes1) {
+	public Song(String songName, AudioClip songFile, int songNo, int songDuration, List<Pair<Double, Integer>> songNotes1) {
 		this.songName = songName;
 		this.songFile = songFile;
 		this.songNo = songNo;
@@ -53,11 +51,11 @@ public class Song {
 		this.songDuration = songDuration;
 	}
 
-	public SortedMap<Double, Integer> getSongNotes() {
+	public List<Pair<Double, Integer>> getSongNotes() {
 		return songNotes;
 	}
 
-	public void setSongNotes(SortedMap<Double, Integer> songNotes) {
+	public void setSongNotes(List<Pair<Double, Integer>> songNotes) {
 		this.songNotes = songNotes;
 	}
 }
