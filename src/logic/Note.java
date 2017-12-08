@@ -1,10 +1,6 @@
 package logic;
 
-import java.util.SortedMap;
-
-import input.InGameInput;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 
 public class Note extends Items {
