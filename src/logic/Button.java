@@ -39,9 +39,38 @@ public class Button extends Items {
 	public void update() {
 		if(InGameInput.getKeyPressed(keycode)) {
 			isPressed = true;
+			model.setTouch(true);
+			Song selectedSong = model.getAllSongs().get(model.getSelectedSong());
+			int time_now = selectedSong.getSongDuration() - model.getCountDownTimer().getTimeSecond();
+			if(selectedSong.getSongNoteMaps().containsKey((Double) (double) time_now) && isVisible()) {
+				if(keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 1) {
+					model.setTouchNote(true);
+					model.scoreUp();
+//					visible = false;
+					System.out.println("Score: " + model.getScore() + "\tCombo:" + model.getCombo());
+				}
+				if(keycode.equals(KeyCode.S) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 2) {
+					model.setTouchNote(true);
+					model.scoreUp();
+//					visible = false;
+					System.out.println("Score: " + model.getScore() + "\tCombo:" + model.getCombo());
+				}
+				if(keycode.equals(KeyCode.D) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 3) {
+					model.setTouchNote(true);
+					model.scoreUp();
+//					visible = false;
+					System.out.println("Score: " + model.getScore() + "\tCombo:" + model.getCombo());
+				}
+//				else {
+//					model.setTouchNote(false);
+//					model.resetCombo();
+//				}
+			}
+			
 		}
 		else {
 			isPressed = false;
+			model.setTouch(false);
 		}
 	}
 }
