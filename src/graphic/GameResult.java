@@ -23,9 +23,12 @@ public class GameResult extends CanvasManager implements Drawable {
 	}
 	
 	public void setText(){
-		gc.setFill(Color.YELLOWGREEN);
+		gc.setFill(Color.ANTIQUEWHITE);
 		gc.setFont(MAIN_FONT);
-		gc.fillText("TEST Game Result", SCENE_WIDTH/3, SCENE_HEIGHT/2);
+		String result = "Your score is: " + model.getScore();
+		double result_width = calculateTextWidth(result, MAIN_FONT);
+		double font_height = calculateTextHeight(MAIN_FONT);
+		gc.fillText(result, (SCENE_WIDTH - result_width) / 2, (SCENE_HEIGHT - font_height) / 2 + font_height);
 	}
 	
 	private void EventHandler() {
