@@ -15,7 +15,6 @@ public class Note extends Items {
 
 	@Override
 	public void draw(GraphicsContext gc, int count) {
-		// TODO Auto-generated method stub
 		gc.setFill(Color.YELLOW);
 		gc.setStroke(Color.YELLOWGREEN);
 		double Y = count * model.getSpeed()
@@ -23,12 +22,6 @@ public class Note extends Items {
 																											// GOING UP
 		gc.fillOval(90 + (position - 1) * 120, Y, 50, 50);
 		gc.strokeOval(90 + (position - 1) * 120, Y, 50, 50);
-		// gc.fillOval(90 + (position - 1)*120, (y*model.getSpeed() +
-		// model.getAllSongs().get(model.getSelectedSong()).getSongDuration() -
-		// model.getCountDownTimer().getTimeSecond()), 50, 50);
-		// gc.strokeOval(90 + (position - 1)*120, (y*model.getSpeed() +
-		// model.getAllSongs().get(model.getSelectedSong()).getSongDuration() -
-		// model.getCountDownTimer().getTimeSecond()), 50, 50);
 	}
 
 	public void update() {
