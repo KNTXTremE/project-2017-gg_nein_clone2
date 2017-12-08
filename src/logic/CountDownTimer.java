@@ -18,10 +18,6 @@ public class CountDownTimer {
 		if(getTimeSecond() % PER_MINUTE < 10) return "0" + String.valueOf(getTimeSecond() / PER_MINUTE) + ":0" + String.valueOf(getTimeSecond() % PER_MINUTE);
 		return "0" + String.valueOf(getTimeSecond() / PER_MINUTE) + ":" + String.valueOf(getTimeSecond() % PER_MINUTE);
 	}
-
-	public int getTimeSecond() {
-		return (int) (time/Math.pow(10, 9));
-	}
 	
 	public long getTime() {
 		return time;
@@ -29,6 +25,10 @@ public class CountDownTimer {
 
 	public void setTime(long time) {
 		this.time = time;
+	}
+	
+	public int getTimeSecond() {
+		return (int) (time/Math.pow(10, 9));
 	}
 	
 	public void setTimeSecond(int time) {
