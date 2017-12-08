@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 public class Pause extends CanvasManager implements Drawable {
 
 	public Pause() {
-		super(SCENE_WIDTH, SCENE_HEIGHT);
+		super(INGAME_WIDTH, INGAME_HEIGHT);
 		gc = this.getGraphicsContext2D();
 		setBackGround();
 		setText();
@@ -19,7 +19,7 @@ public class Pause extends CanvasManager implements Drawable {
 	@Override
 	public void setBackGround() {
 		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
+		gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
 	}
 
 	@Override
@@ -30,9 +30,9 @@ public class Pause extends CanvasManager implements Drawable {
 		double back_width = calculateTextWidth(back, SUBMAIN_FONT);
 		gc.setFont(MAIN_FONT);
 		gc.setFill(Color.ANTIQUEWHITE);
-		gc.fillText(title, (SCENE_WIDTH - title_width)/2, SCENE_HEIGHT/3);
+		gc.fillText(title, (INGAME_WIDTH - title_width)/2, INGAME_HEIGHT/3);
 		gc.setFont(SUBMAIN_FONT);
-		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
+		gc.fillText(back, INGAME_WIDTH - back_width - 10, INGAME_HEIGHT - 10);
 		
 	}
 
