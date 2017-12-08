@@ -85,9 +85,6 @@ public class GameLogic {
 			long elapsedTime = System.nanoTime() - lastLoopStartTime;
 			if (elapsedTime >= LOOP_TIME) {
 				lastLoopStartTime += LOOP_TIME;
-				button1.update();
-				button2.update();
-				button3.update();
 				updateGame(elapsedTime);
 				try {
 					Thread.sleep(1);
@@ -100,6 +97,12 @@ public class GameLogic {
 	}
 
 	private void updateGame(long elapsedTime) {
+		button1.update();
+		button2.update();
+		button3.update();
+		for(Items x : gameObj) {
+			if(x instanceof Note) ((Note) x).update();
+		}
 		model.getCountDownTimer().countDown(elapsedTime);
 		if (model.getCountDownTimer().getTimeSecond() == 0) {
 			GameMain.stopInGame();
