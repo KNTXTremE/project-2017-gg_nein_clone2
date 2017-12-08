@@ -34,7 +34,17 @@ public class GameResult extends CanvasManager implements Drawable {
 		gc.fillText(result, (SCENE_WIDTH - result_width) / 2, (SCENE_HEIGHT - font_height) / 2 + font_height);
 		if(model.getCombo() == model.getAllSongs().get(model.getSelectedSong()).getSongNotes().size()) 
 			new Alert(AlertType.NONE, "YOU GOT AN ALL COMBO! CONGRATULATIONS!.", ButtonType.OK).showAndWait();
-		}
+	}
+	
+	@Override
+	public void setHightLight(String selected_mode, double selected_width) {
+		
+	}
+
+	@Override
+	public void setUnHightLight(String unsel_mode, double unsel_width) {
+		
+	}
 	
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -47,17 +57,5 @@ public class GameResult extends CanvasManager implements Drawable {
                 }
 			}
 		}); 
-	}
-
-	@Override
-	public void setHightLight(String selected_mode, double selected_width) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setUnHightLight(String unsel_mode, double unsel_width) {
-		// TODO Auto-generated method stub
-		
 	}
 }

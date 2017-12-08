@@ -138,6 +138,16 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 	
 	private void EventHandler() {
+	@Override
+	public void setHightLight(String selected_mode, double selected_width) {
+		
+	}
+
+	@Override
+	public void setUnHightLight(String unsel_mode, double unsel_width) {
+		
+	}
+	
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				InGameInput.setKeyPressed(event.getCode());
@@ -153,17 +163,5 @@ public class InGame extends CanvasManager implements Drawable {
 				InGameInput.setKeyReleased(event.getCode());
 			}
 		}); 
-	}
-
-	@Override
-	public void setHightLight(String selected_mode, double selected_width) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setUnHightLight(String unsel_mode, double unsel_width) {
-		// TODO Auto-generated method stub
-		
 	}
 }

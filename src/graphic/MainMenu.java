@@ -39,6 +39,16 @@ public class MainMenu extends CanvasManager implements Drawable {
 	}
 	
 	private void EventHandler() {
+	@Override
+	public void setHightLight(String selected_mode, double selected_width) {
+
+	}
+
+	@Override
+	public void setUnHightLight(String unsel_mode, double unsel_width) {
+
+	}
+	
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
                 if(event.getCode().equals(KeyCode.ESCAPE)){
@@ -50,17 +60,5 @@ public class MainMenu extends CanvasManager implements Drawable {
                 }
 			}
 		}); 
-	}
-
-	@Override
-	public void setHightLight(String selected_mode, double selected_width) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setUnHightLight(String unsel_mode, double unsel_width) {
-		// TODO Auto-generated method stub
-		
 	}
 }
