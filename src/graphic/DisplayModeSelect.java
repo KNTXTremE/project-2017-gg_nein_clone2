@@ -12,9 +12,9 @@ public class DisplayModeSelect extends CanvasManager implements Drawable {
 	private String easy_mode = "Easy";
 	private String normal_mode = "Normal";
 	private String hard_mode = "Hard";
-	double easy_width = calculateTextWidth(easy_mode, MAIN_FONT);
-	double normal_width = calculateTextWidth(normal_mode, MAIN_FONT);
-	double hard_width = calculateTextWidth(hard_mode, MAIN_FONT);
+	private double easy_width = calculateTextWidth(easy_mode, MAIN_FONT);
+	private double normal_width = calculateTextWidth(normal_mode, MAIN_FONT);
+	private double hard_width = calculateTextWidth(hard_mode, MAIN_FONT);
 
 	public DisplayModeSelect() {
 		super(SCENE_WIDTH, SCENE_HEIGHT);
