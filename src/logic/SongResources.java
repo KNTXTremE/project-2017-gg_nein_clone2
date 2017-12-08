@@ -22,6 +22,7 @@ public class SongResources {
 		songs.add(wicked_games);
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static void addSongNotes() {
 		songNotes1.add(new Pair(5.00, 3));
 		songNotes1.add(new Pair(6.00, 1));

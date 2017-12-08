@@ -16,6 +16,7 @@ public class GameLogic {
 	private static final long LOOP_TIME = 1000000000 / FPS;
 
 	private GameModel model;
+	@SuppressWarnings("unused")
 	private InGame ingame;
 	private Thread gameLogic;
 	private List<Items> gameObj;
