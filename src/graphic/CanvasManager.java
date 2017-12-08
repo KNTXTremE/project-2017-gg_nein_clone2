@@ -13,7 +13,7 @@ public class CanvasManager extends Canvas {
 
 	protected static GameModel model;
 	protected GraphicsContext gc;
-	FontLoader fontLoader;
+	private FontLoader fontLoader;
 	
 	public CanvasManager(int sceneWidth, int sceneHeight) {
 		// TODO Auto-generated constructor stub
