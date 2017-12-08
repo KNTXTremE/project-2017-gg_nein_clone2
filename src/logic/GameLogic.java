@@ -101,7 +101,7 @@ public class GameLogic {
 		button2.update();
 		button3.update();
 		for(Items x : gameObj) {
-			if(x instanceof Note) ((Note) x).update();
+			if(x instanceof Note && x.isVisible()) ((Note) x).update();
 		}
 		model.getCountDownTimer().countDown(elapsedTime);
 		if (model.getCountDownTimer().getTimeSecond() == 0) {
