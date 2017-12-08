@@ -25,12 +25,10 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 	
 	private void getReady() {
-		// TODO Auto-generated method stub
 		for(int i = 3; i > -1 ;i--) {
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			setBackGround();
