@@ -2,6 +2,9 @@ package graphic;
 
 import javafx.application.Platform;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -29,7 +32,9 @@ public class GameResult extends CanvasManager implements Drawable {
 		double result_width = calculateTextWidth(result, MAIN_FONT);
 		double font_height = calculateTextHeight(MAIN_FONT);
 		gc.fillText(result, (SCENE_WIDTH - result_width) / 2, (SCENE_HEIGHT - font_height) / 2 + font_height);
-	}
+		if(model.getCombo() == model.getAllSongs().get(model.getSelectedSong()).getSongNotes().size()) 
+			new Alert(AlertType.NONE, "YOU GOT AN ALL COMBO! CONGRATULATIONS!.", ButtonType.OK).showAndWait();
+		}
 	
 	private void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
