@@ -36,7 +36,7 @@ public class GameMain {
 	}
 	
 	private static void moveToResult() {
+		SceneManager.newGameResult();
 		SceneManager.gotoGameResult();
 	}
-	
 }

@@ -34,6 +34,9 @@ public class SceneManager {
 		if(displayModeSelectCanvas == null) displayModeSelectCanvas = new DisplayModeSelect();
 		if(displaySongSelectCanvas == null) displaySongSelectCanvas = new DisplaySongSelect();
 		if(pauseCanvas == null) pauseCanvas = new Pause();
+	}
+	
+	public static void newGameResult() {
 		if(gameResultCanvas == null) gameResultCanvas = new GameResult();
 	}
 	
