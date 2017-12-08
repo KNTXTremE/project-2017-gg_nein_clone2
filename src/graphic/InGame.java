@@ -40,7 +40,7 @@ public class InGame extends CanvasManager implements Drawable {
 			double game_ready_width = calculateTextWidth(game_ready, MAIN_FONT);
 			double game_ready_height = calculateTextHeight(MAIN_FONT);
 			gc.fillText(game_ready, (INGAME_WIDTH - game_ready_width)/2, (INGAME_HEIGHT - game_ready_height)/2 + game_ready_height);
-			System.out.println(i);
+			System.out.println("Game start in " + i);
 		}
 	}
 
