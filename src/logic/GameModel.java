@@ -3,11 +3,10 @@ package logic;
 import java.util.ArrayList;
 import java.util.List;
 
-import sharedObject.RenderableHolder;
+import javafx.scene.input.KeyCode;
 
 public class GameModel {
 	
-	private boolean touch;
 	private boolean touchNote;
 	private int combo;
 	private int score;
@@ -15,12 +14,17 @@ public class GameModel {
 	private int mode;
 	private int selectedSong;
 	private List<Song> allSongs;
+	private boolean touchButton1;
+	private boolean touchButton2;
+	private boolean touchButton3;
 
 	public static final int SCORE_PER_NOTE = 100;
 	public static final int MULTIPILER = 15;
 	
 	public GameModel() {
-		touch = false;
+		touchButton1 = false;
+		touchButton2 = false;
+		touchButton3 = false;
 		touchNote = false;
 		combo = 0;
 		score = 0;
@@ -41,13 +45,26 @@ public class GameModel {
 	public void resetCombo() {
 		combo = 0;
 	}
+
+	public void setTouchButton(boolean touchButton, KeyCode keycode) {
+		if(keycode.equals(KeyCode.A))
+			touchButton1 = touchButton;
+		if(keycode.equals(KeyCode.S))
+			touchButton2 = touchButton;
+		if(keycode.equals(KeyCode.D))
+			touchButton3 = touchButton;
+	}
 	
-	public boolean isTouch() {
-		return touch;
+	public boolean isTouchButton1() {
+		return touchButton1;
+	}
+	
+	public boolean isTouchButton2() {
+		return touchButton2;
 	}
 
-	public void setTouch(boolean touch) {
-		this.touch = touch;
+	public boolean isTouchButton3() {
+		return touchButton3;
 	}
 
 	public boolean isTouchNote() {
