@@ -46,19 +46,16 @@ public class Button extends Items {
 				if(keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 1) {
 					model.setTouchNote(true);
 					model.scoreUp();
-//					visible = false;
 					System.out.println("Score: " + model.getScore() + "\tCombo:" + model.getCombo());
 				}
 				if(keycode.equals(KeyCode.S) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 2) {
 					model.setTouchNote(true);
 					model.scoreUp();
-//					visible = false;
 					System.out.println("Score: " + model.getScore() + "\tCombo:" + model.getCombo());
 				}
 				if(keycode.equals(KeyCode.D) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 3) {
 					model.setTouchNote(true);
 					model.scoreUp();
-//					visible = false;
 					System.out.println("Score: " + model.getScore() + "\tCombo:" + model.getCombo());
 				}
 				else if ((keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 2) ||
