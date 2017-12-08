@@ -18,15 +18,16 @@ public class Button extends Items {
 	
 	@Override
 	public void draw(GraphicsContext gc, int count) {
-		// TODO Auto-generated method stub
-		if(isPressed == false) { //DRAW UNPRESSED
+		//DRAW UNPRESSED
+		if(isPressed == false) { 
 			gc.setFill(Color.RED);
 			gc.setLineWidth(10);
 			gc.setStroke(Color.WHITE);
 			gc.strokeRect(x, y, 110, 60);
 			gc.fillRect(x, y, 100, 50);
 		}
-		else { //DRAW PRESSED
+		//DRAW PRESSED
+		else { 
 			gc.setFill(Color.ORANGE);
 			gc.setLineWidth(10);
 			gc.setStroke(Color.WHITE);
