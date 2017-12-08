@@ -2,6 +2,8 @@ package logic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import sharedObject.RenderableHolder;
 
@@ -9,8 +11,10 @@ public class SongResources {
 	
 	private static List<Pair<Double, Integer>> songNotes1 = new ArrayList<>();
 	private static List<Pair<Double, Integer>> songNotes2 = new ArrayList<>();
-	private static Song nyancat = new Song("Nyan Cat", RenderableHolder.music1, 0, 35, songNotes1);
-	private static Song wicked_games = new Song("Wicked Games", RenderableHolder.music2, 1, (4*60) + 41, songNotes2);
+	private static SortedMap<Double, Integer> songNoteMaps1 = new TreeMap<>();;
+	private static SortedMap<Double, Integer> songNoteMaps2 = new TreeMap<>();;
+	private static Song nyancat = new Song("Nyan Cat", RenderableHolder.music1, 0, 35, songNotes1, songNoteMaps1);
+	private static Song wicked_games = new Song("Wicked Games", RenderableHolder.music2, 1, (4*60) + 41, songNotes2, songNoteMaps2);
 	
 	public static void addSong(List<Song> songs) {
 		addSongNotes();
@@ -46,5 +50,9 @@ public class SongResources {
 		songNotes1.add(new Pair(29.00, 2));
 		songNotes1.add(new Pair(30.00, 2));
 		System.out.println(songNotes1);
+		for(Pair x : songNotes1) {
+			songNoteMaps1.put((Double) x.getFirst(), (Integer) x.getSecond());
+		}
+		System.out.println(songNoteMaps1);
 	}
 }

@@ -1,6 +1,8 @@
 package logic;
 
 import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
 
 import javafx.scene.media.AudioClip;
 
@@ -10,13 +12,15 @@ public class Song {
 	private int songNo;
 	private int songDuration;
 	private List<Pair<Double, Integer>> songNotes;
+	private SortedMap<Double, Integer> songNoteMaps;
 	
-	public Song(String songName, AudioClip songFile, int songNo, int songDuration, List<Pair<Double, Integer>> songNotes1) {
+	public Song(String songName, AudioClip songFile, int songNo, int songDuration, List<Pair<Double, Integer>> songNotes, SortedMap<Double, Integer> songNoteMaps) {
 		this.songName = songName;
 		this.songFile = songFile;
 		this.songNo = songNo;
 		this.songDuration = songDuration;
-		this.songNotes = songNotes1;
+		this.songNotes = songNotes;
+		this.songNoteMaps = songNoteMaps;
 	}
 
 	public String getSongName() {
@@ -58,4 +62,13 @@ public class Song {
 	public void setSongNotes(List<Pair<Double, Integer>> songNotes) {
 		this.songNotes = songNotes;
 	}
+
+	public SortedMap<Double, Integer> getSongNoteMaps() {
+		return songNoteMaps;
+	}
+
+	public void setSongNoteMaps(SortedMap<Double, Integer> songNoteMaps) {
+		this.songNoteMaps = songNoteMaps;
+	}
+	
 }
