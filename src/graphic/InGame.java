@@ -137,7 +137,6 @@ public class InGame extends CanvasManager implements Drawable {
 		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + 2*font_height);
 	}
 	
-	private void EventHandler() {
 	@Override
 	public void setHightLight(String selected_mode, double selected_width) {
 		
@@ -148,6 +147,7 @@ public class InGame extends CanvasManager implements Drawable {
 		
 	}
 	
+	public void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				InGameInput.setKeyPressed(event.getCode());

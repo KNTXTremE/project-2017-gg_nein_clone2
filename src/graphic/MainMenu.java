@@ -38,7 +38,6 @@ public class MainMenu extends CanvasManager implements Drawable {
 		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 	}
 	
-	private void EventHandler() {
 	@Override
 	public void setHightLight(String selected_mode, double selected_width) {
 
@@ -49,6 +48,7 @@ public class MainMenu extends CanvasManager implements Drawable {
 
 	}
 	
+	public void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
                 if(event.getCode().equals(KeyCode.ESCAPE)){

@@ -50,8 +50,8 @@ public class Pause extends CanvasManager implements Drawable {
 		
 	}
 	
-	private void EventHandler() {
 		// TODO Auto-generated method stub
+	public void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if (event.getCode().equals(KeyCode.ESCAPE)) {

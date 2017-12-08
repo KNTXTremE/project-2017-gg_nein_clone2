@@ -46,7 +46,7 @@ public class GameResult extends CanvasManager implements Drawable {
 		
 	}
 	
-	private void EventHandler() {
+	public void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
                 if(event.getCode().equals(KeyCode.ESCAPE)){

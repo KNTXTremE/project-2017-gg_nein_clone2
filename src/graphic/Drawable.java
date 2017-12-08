@@ -13,4 +13,5 @@ public interface Drawable {
 	public void setText();
 	public void setHightLight(String selected_mode, double selected_width);
 	public void setUnHightLight(String unsel_mode, double unsel_width);
+	public void EventHandler();
 }

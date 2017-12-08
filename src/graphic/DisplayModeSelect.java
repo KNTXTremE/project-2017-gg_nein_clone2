@@ -58,7 +58,7 @@ public class DisplayModeSelect extends CanvasManager implements Drawable {
 		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
 	}
 
-	private void EventHandler() {
+	public void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if (event.getCode().equals(KeyCode.ESCAPE)) {

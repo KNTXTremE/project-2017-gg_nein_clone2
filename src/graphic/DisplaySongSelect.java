@@ -61,7 +61,7 @@ public class DisplaySongSelect extends CanvasManager implements Drawable {
 				(2 + model.getSelectedSong()) * SCENE_HEIGHT / (5 + model.getAllSongs().size()));
 	}
 
-	private void EventHandler() {
+	public void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if (event.getCode().equals(KeyCode.ESCAPE)) {
