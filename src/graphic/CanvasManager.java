@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.text.Font;
 import logic.GameModel;
 
+@SuppressWarnings("restriction")
 public class CanvasManager extends Canvas {
 
 	protected static GameModel model;
