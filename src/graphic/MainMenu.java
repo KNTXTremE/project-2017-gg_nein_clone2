@@ -20,7 +20,6 @@ public class MainMenu extends CanvasManager implements Drawable {
 	
 	public void setBackGround() {
 		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 		gc.drawImage(RenderableHolder.menuBackground, 0, 0);
 	}
 
