@@ -45,12 +45,14 @@ public class DisplayModeSelect extends CanvasManager implements Drawable {
 		gc.fillText(easy_mode, (SCENE_WIDTH - easy_width) / 2, 2 * SCENE_HEIGHT / 5);
 		
 	}
-
+	
+	@Override
 	public void setHightLight(String selected_mode, double selected_width) {
 		gc.setFill(Color.LIME);
 		gc.fillText(selected_mode, (SCENE_WIDTH - selected_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
 	}
 
+	@Override
 	public void setUnHightLight(String unsel_mode, double unsel_width) {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.fillText(unsel_mode, (SCENE_WIDTH - unsel_width) / 2, (2 + model.getMode()) * SCENE_HEIGHT / 5);
