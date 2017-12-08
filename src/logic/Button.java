@@ -39,7 +39,7 @@ public class Button extends Items {
 	public void update() {
 		if(InGameInput.getKeyPressed(keycode)) {
 			isPressed = true;
-			model.setTouch(true);
+			model.setTouchButton(true, keycode);
 			Song selectedSong = model.getAllSongs().get(model.getSelectedSong());
 			int time_now = selectedSong.getSongDuration() - model.getCountDownTimer().getTimeSecond();
 			if(selectedSong.getSongNoteMaps().containsKey((Double) (double) time_now) && isVisible()) {
@@ -61,16 +61,30 @@ public class Button extends Items {
 //					visible = false;
 					System.out.println("Score: " + model.getScore() + "\tCombo:" + model.getCombo());
 				}
-//				else {
-//					model.setTouchNote(false);
-//					model.resetCombo();
-//				}
+				else if ((keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 2) ||
+						(keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 3)){
+					model.setTouchNote(false);
+					model.resetCombo();
+				}
+				else if ((keycode.equals(KeyCode.S) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 1) ||
+						(keycode.equals(KeyCode.S) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 3)){
+					model.setTouchNote(false);
+					model.resetCombo();
+				}
+				else if ((keycode.equals(KeyCode.D) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 1) ||
+						(keycode.equals(KeyCode.D) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 2)){
+					model.setTouchNote(false);
+					model.resetCombo();
+				}
+				else {
+					model.setTouchNote(false);
+				}
 			}
 			
 		}
 		else {
 			isPressed = false;
-			model.setTouch(false);
+			model.setTouchButton(false, keycode);
 		}
 	}
 }
