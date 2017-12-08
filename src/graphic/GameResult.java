@@ -29,9 +29,13 @@ public class GameResult extends CanvasManager implements Drawable {
 		gc.setFill(Color.ANTIQUEWHITE);
 		gc.setFont(MAIN_FONT);
 		String result = "Your score is: " + model.getScore();
+		String back = "ESC: Exit";
 		double result_width = calculateTextWidth(result, MAIN_FONT);
+		double back_width = calculateTextWidth(back, SUBMAIN_FONT);
 		double font_height = calculateTextHeight(MAIN_FONT);
 		gc.fillText(result, (SCENE_WIDTH - result_width) / 2, (SCENE_HEIGHT - font_height) / 2 + font_height);
+		gc.setFont(SUBMAIN_FONT);
+		gc.fillText(back, SCENE_WIDTH - back_width - 10, SCENE_HEIGHT - 10);
 		if(model.getCombo() == model.getAllSongs().get(model.getSelectedSong()).getSongNotes().size()) 
 			new Alert(AlertType.NONE, "YOU GOT AN ALL COMBO! CONGRATULATIONS!.", ButtonType.OK).showAndWait();
 	}
