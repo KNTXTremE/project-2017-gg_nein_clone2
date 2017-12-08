@@ -23,7 +23,7 @@ public class SongResources {
 	}
 	
 	private static void addSongNotes() {
-/*		songNotes1.add(new Pair(5.00, 3));
+		songNotes1.add(new Pair(5.00, 3));
 		songNotes1.add(new Pair(6.00, 1));
 		songNotes1.add(new Pair(7.00, 2));
 		songNotes1.add(new Pair(8.00, 2));
@@ -50,10 +50,9 @@ public class SongResources {
 		songNotes1.add(new Pair(29.00, 2));
 		songNotes1.add(new Pair(30.00, 2));
 		System.out.println(songNotes1);
-		for(Pair x : songNotes1) {
-	songNoteMaps1.put((Double) x.getFirst(), (Integer) x.getSecond()); 
+		for(Pair x : songNotes1) 
+			songNoteMaps1.put((Double) x.getFirst(), (Integer) x.getSecond()); 
 		
-		} 		*/
 		songNotes2.add(new Pair(8.60,3));
 		songNotes2.add(new Pair(8.88,2));
 		songNotes2.add(new Pair(9.64,1));
@@ -457,8 +456,7 @@ public class SongResources {
 		songNotes2.add(new Pair(276.72,2));
 		songNotes2.add(new Pair(277.00,3));
 		System.out.println(songNotes2);
-		for(Pair x : songNotes2) {
-	songNoteMaps2.put((Double) x.getFirst(), (Integer) x.getSecond());
-		}
+		for(Pair x : songNotes2) 
+			songNoteMaps2.put((Double) x.getFirst(), (Integer) x.getSecond());
 	}
 }
