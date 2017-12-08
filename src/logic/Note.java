@@ -1,6 +1,10 @@
 package logic;
 
+import java.util.SortedMap;
+
+import input.InGameInput;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 
 public class Note extends Items {
@@ -30,6 +34,27 @@ public class Note extends Items {
 		// model.getAllSongs().get(model.getSelectedSong()).getSongDuration() -
 		// model.getCountDownTimer().getTimeSecond()), 50, 50);
 	}
+
+	public void update() {
+		
+		Song selectedSong = model.getAllSongs().get(model.getSelectedSong());
+		int time_now = selectedSong.getSongDuration() - model.getCountDownTimer().getTimeSecond();
+		
+		if(model.isTouchButton1() && position == 1 && selectedSong.getSongNoteMaps().containsKey((Double) (double) time_now)) {
+			selectedSong.getSongNoteMaps().remove((Double) (double)time_now);
+			isPressed = true;
+			visible = false;
+		}
+		if(model.isTouchButton2() && position == 2 && selectedSong.getSongNoteMaps().containsKey((Double) (double) time_now)) {
+			selectedSong.getSongNoteMaps().remove((Double) (double)time_now);
+			isPressed = true;
+			visible = false;
+		}
+		if(model.isTouchButton3() && position == 3 && selectedSong.getSongNoteMaps().containsKey((Double) (double) time_now)) {
+			selectedSong.getSongNoteMaps().remove((Double) (double)time_now);
+			isPressed = true;
+			visible = false;
+		}
 
 	}
 
