@@ -18,14 +18,12 @@ public class Pause extends CanvasManager implements Drawable {
 
 	@Override
 	public void setBackGround() {
-		// TODO Auto-generated method stub
 		gc.setFill(Color.BLACK);
 		gc.fillRect(0, 0, SCENE_WIDTH, SCENE_HEIGHT);
 	}
 
 	@Override
 	public void setText() {
-		// TODO Auto-generated method stub
 		String title = "- Pause -";
 		String back = "ESC: Play";
 		double title_width = calculateTextWidth(title, MAIN_FONT);
@@ -40,17 +38,12 @@ public class Pause extends CanvasManager implements Drawable {
 
 	@Override
 	public void setHightLight(String selected_mode, double selected_width) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void setUnHightLight(String unsel_mode, double unsel_width) {
-		// TODO Auto-generated method stub
-		
 	}
 	
-		// TODO Auto-generated method stub
 	public void EventHandler() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
