@@ -53,6 +53,5 @@ public class SongResources {
 		for(Pair x : songNotes1) {
 			songNoteMaps1.put((Double) x.getFirst(), (Integer) x.getSecond());
 		}
-		System.out.println(songNoteMaps1);
 	}
 }
