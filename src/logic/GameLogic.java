@@ -2,13 +2,14 @@ package logic;
 
 import java.util.ArrayList;
 import java.util.List;
-import logic.Pair;
 
 import application.GameMain;
 import graphic.CanvasManager;
 import graphic.InGame;
 import javafx.scene.input.KeyCode;
 import sharedObject.RenderableHolder;
+import song.Pair;
+import song.Song;
 
 public class GameLogic {
 

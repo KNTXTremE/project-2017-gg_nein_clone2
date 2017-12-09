@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.input.KeyCode;
+import song.Song;
+import song.SongResources;
 
 public class GameModel {
 	

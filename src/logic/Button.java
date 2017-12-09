@@ -4,6 +4,7 @@ import input.InGameInput;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import song.Song;
 
 public class Button extends Items {
 

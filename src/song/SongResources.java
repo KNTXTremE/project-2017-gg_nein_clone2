@@ -1,4 +1,4 @@
-package logic;
+package song;
 
 import java.util.ArrayList;
 import java.util.List;

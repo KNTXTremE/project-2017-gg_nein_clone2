@@ -1,4 +1,4 @@
-package logic;
+package song;
 
 import java.util.List;
 import java.util.SortedMap;

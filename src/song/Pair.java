@@ -1,4 +1,4 @@
-package logic;
+package song;
 
 public class Pair<A, B> {
 	private A first;

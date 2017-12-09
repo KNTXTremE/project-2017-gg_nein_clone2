@@ -5,8 +5,8 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import logic.Song;
 import sharedObject.RenderableHolder;
+import song.Song;
 import window.SceneManager;
 
 public class DisplaySongSelect extends CanvasManager implements Drawable {
