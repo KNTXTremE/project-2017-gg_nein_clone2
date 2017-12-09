@@ -14,6 +14,7 @@ public class Main extends Application {
 			primaryStage.setTitle("LapLap Game");
 			primaryStage.centerOnScreen();
 			primaryStage.setOnCloseRequest(e -> Platform.exit());
+			primaryStage.setOnCloseRequest(e -> System.exit(0));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
