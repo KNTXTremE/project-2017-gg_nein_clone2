@@ -32,7 +32,7 @@ public class InGame extends CanvasManager implements Drawable {
 				e.printStackTrace();
 			}
 			setBackGround();
-			gc.setFill(Color.YELLOWGREEN);
+			gc.setFill(Color.ANTIQUEWHITE);
 			gc.setFont(MAIN_FONT);
 			String game_ready = "Game start in " + i;
 			double game_ready_width = calculateTextWidth(game_ready, MAIN_FONT);
