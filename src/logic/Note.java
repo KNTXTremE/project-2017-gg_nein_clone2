@@ -18,9 +18,8 @@ public class Note extends Items {
 	public void draw(GraphicsContext gc, int count) {
 		gc.setFill(Color.YELLOW);
 		gc.setStroke(Color.YELLOWGREEN);
-		double Y = count * model.getSpeed()
-				+ 120 * (model.getAllSongs().get(model.getSelectedSong()).getSongDuration() - y) - 3500; // MINUS FOR
-																											// GOING UP
+		double Y = 700 + count*model.getSpeed() - (model.getSpeed() * 60 * (y)); 
+		
 		gc.fillOval(90 + (position - 1) * 120, Y, 50, 50);
 		gc.strokeOval(90 + (position - 1) * 120, Y, 50, 50);
 	}
