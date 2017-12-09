@@ -18,6 +18,7 @@ public class RenderableHolder {
 	public static Image menuBackground;
 	public static Image inGameBackground;
 	public static AudioClip  music1, music2;
+	public static AudioClip wrong;
 	public static Font gameFont;
 
 	static {
@@ -42,6 +43,7 @@ public class RenderableHolder {
 		inGameBackground = new Image(ClassLoader.getSystemResource("backgrounds/ingame.gif").toString());
 		music1 = new AudioClip(ClassLoader.getSystemResource("musics/nyancat.mp3").toString());
 		music2 = new AudioClip(ClassLoader.getSystemResource("musics/wicked-games.mp3").toString());
+		wrong = new AudioClip(ClassLoader.getSystemResource("sounds/wrong.mp3").toString());
 		gameFont = Font.loadFont(ClassLoader.getSystemResource("fonts/AGENCYB.TTF").toString(), 50);
 	}
 
