@@ -172,16 +172,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="sharedObject.RenderableHolder" project="2110215_Project_2017_GG_Nein" 
-    file="/2110215_Project_2017_GG_Nein/src/sharedObject/RenderableHolder.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1115" y="1584"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="21" language="java" name="window.SceneManager" project="2110215_Project_2017_GG_Nein" 
+  <class id="20" language="java" name="window.SceneManager" project="2110215_Project_2017_GG_Nein" 
     file="/2110215_Project_2017_GG_Nein/src/window/SceneManager.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="328" y="189"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -190,7 +181,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="song.Pair" project="2110215_Project_2017_GG_Nein" 
+  <class id="21" language="java" name="song.Pair" project="2110215_Project_2017_GG_Nein" 
     file="/2110215_Project_2017_GG_Nein/src/song/Pair.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="631" y="125"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -199,7 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="song.Song" project="2110215_Project_2017_GG_Nein" 
+  <class id="22" language="java" name="song.Song" project="2110215_Project_2017_GG_Nein" 
     file="/2110215_Project_2017_GG_Nein/src/song/Song.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1332" y="201"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="song.SongResources" project="2110215_Project_2017_GG_Nein" 
+  <class id="23" language="java" name="song.SongResources" project="2110215_Project_2017_GG_Nein" 
     file="/2110215_Project_2017_GG_Nein/src/song/SongResources.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1449" y="538"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -217,68 +208,77 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="25">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <realization id="26">    
-    <end type="SOURCE" refId="10"/>    
+  <class id="24" language="java" name="sharedObject.RenderableHolder" project="2110215_Project_2017_GG_Nein" 
+    file="/2110215_Project_2017_GG_Nein/src/sharedObject/RenderableHolder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1115" y="1592"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="25">    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="7"/>  
   </realization>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
   <generalization id="27">    
-    <end type="SOURCE" refId="6"/>    
+    <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
   <generalization id="28">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="5"/>  
   </generalization>  
-  <realization id="29">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <realization id="30">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="7"/>  
-  </realization>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="11"/>    
+  <generalization id="29">    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
-  <realization id="32">    
+  <realization id="30">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="7"/>  
   </realization>  
-  <generalization id="33">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="14"/>  
-  </generalization>  
-  <generalization id="34">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <realization id="35">    
+  <realization id="31">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <realization id="32">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="7"/>  
   </realization>  
-  <realization id="36">    
+  <generalization id="33">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="34">    
     <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="16"/>  
   </realization>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <realization id="38">    
-    <end type="SOURCE" refId="11"/>    
+  <realization id="35">    
+    <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="7"/>  
   </realization>  
-  <generalization id="39">    
+  <generalization id="36">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="38">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="14"/>  
   </generalization>  
+  <realization id="39">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
   <generalization id="40">    
-    <end type="SOURCE" refId="10"/>    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="3"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
