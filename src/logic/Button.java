@@ -4,6 +4,7 @@ import input.InGameInput;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import sharedObject.RenderableHolder;
 import song.Song;
 
 public class Button extends Items {
@@ -63,16 +64,19 @@ public class Button extends Items {
 				else if ((keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 2) ||
 						(keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 3)){
 					model.setTouchNote(false);
+					RenderableHolder.wrong.play();
 					model.resetCombo();
 				}
 				else if ((keycode.equals(KeyCode.S) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 1) ||
 						(keycode.equals(KeyCode.S) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 3)){
 					model.setTouchNote(false);
+					RenderableHolder.wrong.play();
 					model.resetCombo();
 				}
 				else if ((keycode.equals(KeyCode.D) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 1) ||
 						(keycode.equals(KeyCode.D) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 2)){
 					model.setTouchNote(false);
+					RenderableHolder.wrong.play();
 					model.resetCombo();
 				}
 				else {
