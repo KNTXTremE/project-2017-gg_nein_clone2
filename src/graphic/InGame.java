@@ -120,7 +120,9 @@ public class InGame extends CanvasManager implements Drawable {
 		gc.setFill(Color.WHITE);
 		gc.setFont(SUBMAIN_FONT);
 		gc.fillText("Score: " + model.getScore(), 10, 10 + font_height);
+		if(model.getCombo() == 0) gc.setFill(Color.RED);
 		gc.fillText("Combo: " + model.getCombo(), 10, 10 + 2*font_height);
+		gc.setFill(Color.WHITE);
 		gc.fillText(song_name, INGAME_WIDTH - song_name_width - 10, 10 + font_height);
 		gc.fillText(time  , INGAME_WIDTH - time_width - 10, 10 + 2*font_height);
 	}
