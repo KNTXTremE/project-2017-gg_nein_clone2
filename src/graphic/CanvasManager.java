@@ -16,7 +16,6 @@ public class CanvasManager extends Canvas {
 	private FontLoader fontLoader;
 	
 	public CanvasManager(int sceneWidth, int sceneHeight) {
-		// TODO Auto-generated constructor stub
 		super(sceneWidth, sceneHeight);
 		fontLoader = Toolkit.getToolkit().getFontLoader();
 		if(model == null) model = new GameModel();
