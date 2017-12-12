@@ -95,11 +95,13 @@ public class InGame extends CanvasManager implements Drawable {
 
 	private void updateAnimation(int count) {
 		setBackGround();
+		synchronized(RenderableHolder.getInstance().getItems()) {
 		for (Renderable item : RenderableHolder.getInstance().getItems()) {
 			if (item.isVisible()) {
 				item.draw(gc ,count);
 			}
 		}
+	}
 		setText();
 		gc.setFill(Color.WHITE);
 	}
