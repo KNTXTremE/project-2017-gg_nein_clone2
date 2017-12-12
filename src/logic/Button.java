@@ -45,7 +45,7 @@ public class Button extends Items {
 			model.setTouchButton(true, keycode);
 			Song selectedSong = model.getAllSongs().get(model.getSelectedSong());
 			int time_now = selectedSong.getSongDuration() - model.getCountDownTimer().getTimeSecond();
-			if(selectedSong.getSongNoteMaps().containsKey((Double) (double) time_now) && isVisible()) {
+			if(selectedSong.getSongNoteMaps().containsKey((Double) (double) time_now)) {
 				if(keycode.equals(KeyCode.A) && selectedSong.getSongNoteMaps().get((Double) (double) time_now) == 1) {
 					model.setTouchNote(true);
 					model.scoreUp();
