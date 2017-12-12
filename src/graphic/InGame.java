@@ -109,8 +109,8 @@ public class InGame extends CanvasManager implements Drawable {
 
 	public void setBackGround() {
 		gc.setFill(Color.BLACK);
-		// gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
-		gc.drawImage(RenderableHolder.inGameBackground, 0, 0);
+		gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
+//		gc.drawImage(RenderableHolder.inGameBackground, 0, 0);
 	}
 
 	public void setText() {
@@ -119,16 +119,24 @@ public class InGame extends CanvasManager implements Drawable {
 		String song_name = model.getAllSongs().get(model.getSelectedSong()).getSongName();
 		double song_name_width = calculateTextWidth(song_name, SUBMAIN_FONT);
 		double font_height = calculateTextHeight(SUBMAIN_FONT);
-
+		String score = "Score: " + model.getScore();
+		String combo = "Combo: " + model.getCombo();
+		
 		gc.setFill(Color.WHITE);
 		gc.setFont(SUBMAIN_FONT);
-		gc.fillText("Score: " + model.getScore(), 10, 10 + font_height);
-		if (model.getCombo() == 0)
-			gc.setFill(Color.RED);
-		gc.fillText("Combo: " + model.getCombo(), 10, 10 + 2 * font_height);
+		synchronized (score) {
+			gc.fillText(score, 10, 10 + font_height);
+		}
+		synchronized (combo) {
+			if (model.getCombo() == 0)
+				gc.setFill(Color.RED);
+			gc.fillText(combo, 10, 10 + 2 * font_height);
+		}
 		gc.setFill(Color.WHITE);
 		gc.fillText(song_name, INGAME_WIDTH - song_name_width - 10, 10 + font_height);
-		gc.fillText(time, INGAME_WIDTH - time_width - 10, 10 + 2 * font_height);
+		synchronized (time) {
+			gc.fillText(time, INGAME_WIDTH - time_width - 10, 10 + 2 * font_height);
+		}
 	}
 
 	@Override
