@@ -48,26 +48,6 @@ public class InGame extends CanvasManager implements Drawable {
 		gameAnimation.start();
 	}
 
-	// public void pauseAnimation() {
-	// try {
-	// gameAnimation.wait();
-	// } catch (InterruptedException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	//
-	// public void resumeAnimation() {
-	// Object lock = new Object();
-	// synchronized(lock) {
-	// lock.notifyAll();
-	// try {
-	// gameAnimation.join(1);
-	// } catch (InterruptedException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// }
-
 	public void stopAnimation() {
 		isAnimationRunning = false;
 	}
