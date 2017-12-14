@@ -58,19 +58,6 @@ public class GameLogic {
 		gameLogic.start();
 	}
 
-	// public void pauseGame() {
-	// try {
-	// gameLogic.wait();
-	// } catch (InterruptedException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// }
-	//
-	// public void resumeGame() {
-	// //gameLogic.notify();
-	// }
-
 	public void stopGame() {
 		isGameRunning = false;
 	}
@@ -79,7 +66,6 @@ public class GameLogic {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		long lastLoopStartTime = System.nanoTime();
@@ -91,7 +77,6 @@ public class GameLogic {
 				try {
 					Thread.sleep(1);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
