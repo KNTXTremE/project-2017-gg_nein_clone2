@@ -3,12 +3,10 @@ package graphic;
 import input.InGameInput;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import sharedObject.Renderable;
 import sharedObject.RenderableHolder;
-import window.SceneManager;
 
 public class InGame extends CanvasManager implements Drawable {
 
@@ -161,10 +159,6 @@ public class InGame extends CanvasManager implements Drawable {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				InGameInput.setKeyPressed(event.getCode());
-				if (event.getCode().equals(KeyCode.ESCAPE)) {
-					// GameMain.pauseInGame();
-					SceneManager.gotoPause();
-				}
 			}
 		});
 
