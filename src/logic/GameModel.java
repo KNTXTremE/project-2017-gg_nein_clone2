@@ -110,7 +110,7 @@ public class GameModel {
 	}
 	
 	public int getSpeed() {
-		return 4 + 2*(mode);
+		return 5 + 15*(mode);
 	}
 
 	public int getSelectedSong() {
