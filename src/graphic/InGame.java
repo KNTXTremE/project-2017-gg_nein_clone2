@@ -1,6 +1,7 @@
 package graphic;
 
 import input.InGameInput;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -95,22 +96,29 @@ public class InGame extends CanvasManager implements Drawable {
 	}
 
 	private void updateAnimation(int count) {
-		setBackGround();
-		synchronized (RenderableHolder.getInstance().getItems()) {
-			for (Renderable item : RenderableHolder.getInstance().getItems()) {
-				if (item.isVisible()) {
-					item.draw(gc, count);
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				setBackGround();
+				synchronized (RenderableHolder.getInstance().getItems()) {
+					for (Renderable item : RenderableHolder.getInstance().getItems()) {
+						if (item.isVisible()) {
+							item.draw(gc, count);
+						}
+					}
 				}
+				setText();
+				gc.setFill(Color.WHITE);
 			}
-		}
-		setText();
-		gc.setFill(Color.WHITE);
+			
+		});
 	}
 
 	public void setBackGround() {
 		gc.setFill(Color.BLACK);
-		gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
-//		gc.drawImage(RenderableHolder.inGameBackground, 0, 0);
+//		gc.fillRect(0, 0, INGAME_WIDTH, INGAME_HEIGHT);
+		gc.drawImage(RenderableHolder.inGameBackground, 0, 0);
 	}
 
 	public void setText() {
