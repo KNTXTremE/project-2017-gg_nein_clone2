@@ -39,7 +39,7 @@ public class GameModel {
 
 	public void scoreUp() {
 		if(touchNote == true) {
-			score += SCORE_PER_NOTE + combo*MULTIPILER;
+			score += (mode + 1)*(SCORE_PER_NOTE + combo*MULTIPILER);
 			combo++;
 		}
 	}
